@@ -1,2 +1,4 @@
 *.dll
 *.exe
+TestResult.xml
+SustainabilityOpenTests.VisualState.xml

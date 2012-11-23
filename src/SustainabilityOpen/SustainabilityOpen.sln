@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SustainabilityOpen", "SustainabilityOpen\SustainabilityOpen.csproj", "{1504942A-7FA2-4787-9132-01577B0940F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SustainabilityOpenTests", "..\tests\SustainabilityOpenTests\SustainabilityOpenTests.csproj", "{8FA7BF42-B692-407D-8ACB-9CCAB2C0931C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{1504942A-7FA2-4787-9132-01577B0940F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1504942A-7FA2-4787-9132-01577B0940F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1504942A-7FA2-4787-9132-01577B0940F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA7BF42-B692-407D-8ACB-9CCAB2C0931C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA7BF42-B692-407D-8ACB-9CCAB2C0931C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA7BF42-B692-407D-8ACB-9CCAB2C0931C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA7BF42-B692-407D-8ACB-9CCAB2C0931C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
