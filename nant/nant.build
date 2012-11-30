@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<project name="sustainability-open" default="build" basedir=".">
+  <target name="clean" description="Cleans the build">
+    <delete dir="build"/>
+  </target>
+  <target name="build-prep" description="Prepares the build">
+    <mkdir dir="build"/>
+  </target>
+  <target name="build" description="Compiles the source code" depends="clean,build-prep">
+    <csc target="library" output="build\SustainabilityOpen.dll">
+      <sources>
+        <include name="..\src\SustainabilityOpen\SustainabilityOpen\*.cs"/>
+      </sources>
+    </csc>
+  </target>
+</project>
