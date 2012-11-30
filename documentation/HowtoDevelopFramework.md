@@ -11,7 +11,7 @@ We are using the following tools for development:
  * IDE:              Microsoft Visual Studio 2010
  * Unit testing:     NUnit
  * Version control:  Git
- * Automated builds: NAnt
+ * Automated builds: NAnt 0.92
  * Rhinoceros 5
  * Grasshopper
 
@@ -41,5 +41,12 @@ Version control
 For those of you who are not using version control with Git a lot, we have included a few commands below for you:
 
  * git branch -la            List all available branches
- * git branch <branchname>   Creates a new branch. Pleae give the branches meaningfull names, lowercases and dashed, like so: new-arabic-documentation
+ * git branch <branchname>   Creates a new branch. Please give the branches meaningfull names, lowercases and dashed, like so: new-arabic-documentation
  * git merge <branchname>    Merge the branch to the branch you are currently working on
+
+Troubleshooting
+---------------
+
+NAnt on Windows 7
+You might want to take a look at this link when you are using NAnt on Windows 7:
+http://stackoverflow.com/questions/8605122/how-do-i-resolve-configuration-errors-with-nant-0-91
