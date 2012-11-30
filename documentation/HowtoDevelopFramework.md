@@ -9,11 +9,11 @@ Tools
 We are using the following tools for development:
 
  * IDE:              Microsoft Visual Studio 2010
- * Unit testing:     NUnit
+ * Unit testing:     NUnit 
  * Version control:  Git
  * Automated builds: NAnt 0.92
  * Rhinoceros 5
- * Grasshopper
+ * Grasshopper 9
 
 Some useful tools are:
  * Git for Windows (if you are into the command line), http://msysgit.github.com
@@ -35,6 +35,15 @@ Compiling the code
 
 Make sure that you have all the prerequisites and tools installed before you start this step.
 
+In Visual Studio you can simply compile the code.
+
+In NAnt run the nant.bat in the nant/ directory to compile the code. The result can be found in nant/build/.
+
+Running the test suite
+----------------------
+
+
+
 Version control
 ---------------
 
@@ -42,7 +51,9 @@ For those of you who are not using version control with Git a lot, we have inclu
 
  * git branch -la            List all available branches
  * git branch <branchname>   Creates a new branch. Please give the branches meaningfull names, lowercases and dashed, like so: new-arabic-documentation
+ * git checkout <branchname> Switch to a different branch
  * git merge <branchname>    Merge the branch to the branch you are currently working on
+ * git commit -m "<message>" Commits the code
 
 Troubleshooting
 ---------------
