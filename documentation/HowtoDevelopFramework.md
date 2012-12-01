@@ -9,7 +9,7 @@ Tools
 We are using the following tools for development:
 
  * IDE:              Microsoft Visual Studio 2010
- * Unit testing:     NUnit 
+ * Unit testing:     NUnit 2.6.2 
  * Version control:  Git
  * Automated builds: NAnt 0.92
  * Rhinoceros 5
@@ -42,7 +42,11 @@ In NAnt run the nant.bat in the nant/ directory to compile the code. The result 
 Running the test suite
 ----------------------
 
+You can run the test suite in different ways:
 
+ * Run "nant test" in the nant/ directory to run the nant build and let nant build and run the test suite.
+ * Run "runtests.bat" in the src/tests/ directory to run the nunit-console
+ * Open the SustainabilityOpenTests.nunit file in the src/tests/ directory to run the test suite in nunit gui
 
 Version control
 ---------------

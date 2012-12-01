@@ -1,16 +1,47 @@
 <?xml version="1.0" ?>
+
 <project name="sustainability-open" default="build" basedir=".">
+
+  <property name="build.dir" value="build"/>
+  <property name="nunit.dir" value="c:\Program Files (x86)\NUnit 2.6.2\bin"/>
+
   <target name="clean" description="Cleans the build">
-    <delete dir="build"/>
+    <delete dir="${build.dir}"/>
   </target>
+
   <target name="build-prep" description="Prepares the build">
-    <mkdir dir="build"/>
+    <mkdir dir="${build.dir}"/>
   </target>
+
   <target name="build" description="Compiles the source code" depends="clean,build-prep">
-    <csc target="library" output="build\SustainabilityOpen.dll">
+    <csc target="library" output="${build.dir}\SustainabilityOpen.dll">
       <sources>
         <include name="..\src\SustainabilityOpen\SustainabilityOpen\*.cs"/>
       </sources>
     </csc>
+  </target>
+
+  <target name="build-testsuite" description="Builds the test suite" depends="build">
+    <csc target="library" output="${build.dir}\SustainabilityOpenTests.dll">
+      <sources>
+        <include name="..\src\tests\SustainabilityOpenTests\*.cs"/>
+      </sources>
+      <references>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
+        <include name="${nunit.dir}\framework\nunit.framework.dll"/>
+      </references>
+    </csc>
+  </target>
+
+  <target name="test" description="Runs the test suite" depends="build-testsuite">
+    <copy todir="${build.dir}">
+      <fileset>
+        <include name="${nunit.dir}\framework\nunit.framework.dll"/>
+      </fileset>
+    </copy>
+    <exec workingdir="${build.dir}"
+          program="${nunit.dir}\nunit-console.exe">
+      <arg value="SustainabilityOpenTests.dll" />
+    </exec>
   </target>
 </project>
