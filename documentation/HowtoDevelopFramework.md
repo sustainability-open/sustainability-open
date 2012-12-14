@@ -29,6 +29,7 @@ You can get the code in the following manner on the command line:
 git clone https://github.com/sustainability-open/sustainability-open
 
 This clones the Github repository on your machine so that you can start working in your own local working copy.
+You can also use TortoiseGit to clone the repository to your local machine.
 
 Compiling the code
 ------------------
@@ -44,20 +45,31 @@ Running the test suite
 
 You can run the test suite in different ways:
 
- * Run "nant test" in the nant/ directory to run the nant build and let nant build and run the test suite.
- * Run "runtests.bat" in the src/tests/ directory to run the nunit-console
+ * Run "nant test" in the nant/ directory from the command line to run the nant build and let nant build and run the test suite.
+ * Run "runtests.bat" from the command line in the src/tests/ directory to run the nunit-console
  * Open the SustainabilityOpenTests.nunit file in the src/tests/ directory to run the test suite in nunit gui
 
-Version control
----------------
+Development guidelines
+----------------------
+
+We follow the Github Flow guidelines: http://scottchacon.com/2011/08/31/github-flow.html
+
+Version control cheat sheat
+---------------------------
 
 For those of you who are not using version control with Git a lot, we have included a few commands below for you:
 
+ * git status                Check out the status of your branch
  * git branch -la            List all available branches
  * git branch <branchname>   Creates a new branch. Please give the branches meaningfull names, lowercases and dashed, like so: new-arabic-documentation
  * git checkout <branchname> Switch to a different branch
  * git merge <branchname>    Merge the branch to the branch you are currently working on
  * git commit -m "<message>" Commits the code
+ * git push origin master    Pushes the code to Github
+ * git pull                  Pulls the code from Github
+
+You might want to read the Github documentation too: https://help.github.com/articles/set-up-git
+Take a look at this resource too: https://help.github.com/articles/what-are-other-good-resources-for-using-git-or-github
 
 Troubleshooting
 ---------------
