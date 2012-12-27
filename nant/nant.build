@@ -4,6 +4,7 @@
 
   <property name="build.dir" value="build"/>
   <property name="nunit.dir" value="c:\Program Files (x86)\NUnit 2.6.2\bin"/>
+  <property name="gh.dir" value="c:\Program Files (x86)\Grasshopper for Rhino 5"/>
 
   <target name="clean" description="Cleans the build">
     <delete dir="${build.dir}"/>
@@ -16,15 +17,20 @@
   <target name="build" description="Compiles the source code" depends="clean,build-prep">
     <csc target="library" output="${build.dir}\SustainabilityOpen.dll">
       <sources>
-        <include name="..\src\SustainabilityOpen\SustainabilityOpen\*.cs"/>
+        <include name="..\src\SustainabilityOpen\SustainabilityOpen\**\*.cs"/>
       </sources>
+      <references>
+        <include name="${gh.dir}\GH_IO.dll"/>
+        <include name="${gh.dir}\Grasshopper.dll"/>
+        <include name="${gh.dir}\rh_common\RhinoCommon.dll"/>
+      </references>
     </csc>
   </target>
 
   <target name="build-testsuite" description="Builds the test suite" depends="build">
     <csc target="library" output="${build.dir}\SustainabilityOpenTests.dll">
       <sources>
-        <include name="..\src\tests\SustainabilityOpenTests\*.cs"/>
+        <include name="..\src\tests\SustainabilityOpenTests\**\*.cs"/>
       </sources>
       <references>
         <include name="${build.dir}\SustainabilityOpen.dll"/>
