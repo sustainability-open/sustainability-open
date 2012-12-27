@@ -7,6 +7,7 @@ namespace SustainabilityOpen.Framework
 {
     public abstract class SOPhysicalObject
     {
+        // Properties
         private string m_Name;
         private List<SOMaterialQuantity> m_MaterialQuantities;
 

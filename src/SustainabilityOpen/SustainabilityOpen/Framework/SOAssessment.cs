@@ -5,6 +5,9 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework
 {
+    /// <summary>
+    /// Assessment entity
+    /// </summary>
     public class SOAssessment : SOBase 
     {
         private List<SOAnalysis> m_Analyses;
@@ -24,6 +27,9 @@ namespace SustainabilityOpen.Framework
             this.m_Analyses.Add(analysis);
         }
 
+        /// <summary>
+        /// Runs the assessment. Override this method to make the assessment do some work.
+        /// </summary>
         public virtual void RunAssessment()
         {
         }

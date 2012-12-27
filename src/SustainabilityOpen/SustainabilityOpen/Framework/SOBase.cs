@@ -5,6 +5,9 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework
 {
+    /// <summary>
+    /// Base class for sustainability-open entities
+    /// </summary>
     public abstract class SOBase
     {
         // Properties
