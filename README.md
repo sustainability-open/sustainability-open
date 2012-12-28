@@ -2,6 +2,7 @@ sustainability-open
 ===================
 (c) Copyright BEMNext Lab and contributors
 Open framework for sustainability assessment and optimisation in the built environment
+Version 0.0.1
 
 License
 =======
