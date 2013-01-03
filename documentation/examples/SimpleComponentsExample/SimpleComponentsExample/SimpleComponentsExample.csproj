@@ -45,7 +45,7 @@
     </Reference>
     <Reference Include="SustainabilityOpen">
       <HintPath>..\..\..\..\src\SustainabilityOpen\SustainabilityOpen\bin\Debug\SustainabilityOpen.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,10 +59,12 @@
     <Compile Include="Beam_HE200A.cs" />
     <Compile Include="SimpleDesignerExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleDesignerExample_Component.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)\$(ProjectName).gha"
+Copy "$(TargetDir)\SustainabilityOpen.dll" "c:\so\"
 Copy "$(TargetDir)\*.gha" "c:\so\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
