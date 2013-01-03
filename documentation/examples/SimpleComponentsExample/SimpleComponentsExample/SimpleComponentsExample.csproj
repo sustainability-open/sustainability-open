@@ -43,6 +43,10 @@
       <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SustainabilityOpen">
+      <HintPath>..\..\..\..\src\SustainabilityOpen\SustainabilityOpen\bin\Debug\SustainabilityOpen.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
