@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Beam_HE200A.cs" />
     <Compile Include="SimpleAssessmentExample.cs" />
+    <Compile Include="SimpleAssessmentExample_Component.cs" />
     <Compile Include="SimpleDesignerExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleDesignerExample_Component.cs" />
