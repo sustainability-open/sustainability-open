@@ -2,7 +2,10 @@
 
 <project name="sustainability-open" default="build" basedir=".">
 
+  <property name="release.version" value="0.0.1"/>
+
   <property name="build.dir" value="build"/>
+  <property name="release.dir" value="release"/>
   <property name="nunit.dir" value="c:\Program Files (x86)\NUnit 2.6.2\bin"/>
   <property name="gh.dir" value="c:\Program Files (x86)\Grasshopper for Rhino 5"/>
 
@@ -12,6 +15,10 @@
 
   <target name="build-prep" description="Prepares the build">
     <mkdir dir="${build.dir}"/>
+  </target>
+
+  <target name="release-prep" description="Prepares the release build" depends="build-prep">
+    <mkdir dir="${build.dir}\${release.dir}"/>
   </target>
 
   <target name="build" description="Compiles the source code" depends="clean,build-prep">
@@ -25,6 +32,34 @@
         <include name="${gh.dir}\rh_common\RhinoCommon.dll"/>
       </references>
     </csc>
+  </target>
+
+  <target name="convert-release" description="Converts the build to Grasshopper files" depends="build,release-prep">
+    <copy file="${build.dir}\SustainabilityOpen.dll"
+          tofile="${build.dir}\${release.dir}\SustainabilityOpen.gha"/>
+  </target>
+
+  <target name="assemble-release" description="Assembles all release files in a single directory">
+    <copy file="${build.dir}\SustainabilityOpen.dll"
+          todir="${build.dir}\${release.dir}\"/>
+    <copy todir="${build.dir}\${release.dir}\">
+      <fileset>
+        <include name="..\LICENSE"/>
+        <include name="..\README.md"/>
+        <include name="..\CHANGELOG.md"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="zip-release" description="Builds the release zip file" depends="convert-release,assemble-release">
+    <zip zipfile="SustainabiltyOpen-${release.version}.zip">
+      <fileset basedir="${build.dir}\${release.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </zip>    
+  </target>
+
+  <target name="release" description="Builds the release" depends="zip-release">
   </target>
 
   <target name="build-testsuite" description="Builds the test suite" depends="build">
