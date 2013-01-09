@@ -4,7 +4,29 @@ sustainability-open
 Open framework for sustainability assessment and optimisation in the built environment
 Version 0.0.1
 
+SustainabilityOpen is an initiative to make the built environment a better place. By providing open-source tooling to the building industry we hope to stimulate that every building and structure will become more sustainable. We are also trying to deploy new and quantitative approaches to assess sustainability in an open-source environment.
 
+By providing you, in case you are representing a company or yourself, with an open-source, free-to-use software framework which you can use to build your own design, analysis and assessment tools for sustainable design, there really is no reason anymore why you shouldn’t design in a sustainable manner, or at least analyse and assess your building. 
+
+The mission is to collaboratively research and build a toolkit that includes many analysis and assessment methods, many components that help with automated design and link to many mainstream software applications, such parametric software applications, BIM applications and geometrical design software.
+
+How does it work?
+=================
+
+SustainabilityOpen (or sustainability-open) consists of
+
+ 1. The framework
+ 2. Implemented components
+
+The framework is provided by us for you to use, but it doesn’t do a lot. It only lays the computational infrastructure for others to use. You will need implemented components to use the framework. These components you are either build yourself or download from the internet if they are build by others.
+
+The framework consists of a number of abstract classes, which we call components, which need to be overridden in order to do something. There are three types:
+
+ 1. Designers: Designers produce a ‘design’ on which the analysis and assessment components can work.
+ 2. Analysis components: the analysis components take in a number of design components that aggregated contain the design and perform one or more analyses on the design. The analysis components produce an output for assessment components to use. An example could be an analysis that adds up all materials into their total quantities.
+3. Assessment components: The assessment components take a number of analysis outputs in and perform one or more assessments to produce an assessment result. An example could be an assessment that calculates the total embodied energy in the design from the material quantities.
+
+At the moment there is one special helper component in the framework, the QTOAnalysis, which actually does some work. QTOAnalysis stands for Quantity Take Off Analysis. We have added this component to the framework as we expect that almost any project will use this component. In the future more helper components might be added to the framework.
 
 Quick example of a framework component
 ======================================
@@ -91,6 +113,21 @@ namespace SimpleComponentsExample
     }
 }
 ```
+
+Requirements
+============
+
+The framework and components have been designed to be build against Rhinoceros 5.0 and Grasshopper 9. You will need these applications to use the framework.
+
+Installation instructions
+=========================
+
+To install the tools, simply download the latest zip file, unzip it in a directory of your choice and point your Grasshopper installation to that directory. The components will become available under the SustainabilityOpen tab in Grasshopper.
+
+Documentation
+=============
+
+Documentation can be found in the documentation directory of the repository or on the website: http://www.sustainability-open.com/docs
 
 License
 =======
