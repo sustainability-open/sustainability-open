@@ -14,6 +14,8 @@
 /// 
 
 /// This file implements a simple assessment
+/// Please note that this component does not perform a real embodied energy assessment
+/// as the factors are not real factors. The example is just a numerical example.
 
 /// Note the inclusion of the framework in the reference
 using SustainabilityOpen.Framework;
@@ -33,6 +35,7 @@ namespace SimpleComponentsExample
     /// </summary>
     public class SimpleAssessmentExample : SOAssessment
     {
+        // Please note that these factors are dummies and not real factors.
         private const double EMBODIEDENERGY_CONCRETE = 3.0;
         private const double EMBODIEDENERGY_STEEL = 2.0;
 
