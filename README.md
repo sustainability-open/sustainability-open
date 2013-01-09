@@ -94,6 +94,7 @@ namespace SimpleComponentsExample
 
 License
 =======
+```txt
 Please note that LICENSE file in this directory which describes the terms under which this code is released to you. The framework is accompanied by the following license:
 
 Copyright 2012-2013 Delft University of Technology, BEMNext Lab and contributors
@@ -109,3 +110,4 @@ Copyright 2012-2013 Delft University of Technology, BEMNext Lab and contributors
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
