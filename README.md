@@ -4,35 +4,22 @@ sustainability-open
 Open framework for sustainability assessment and optimisation in the built environment
 Version 0.0.1
 
-Example of a framework component and Grasshopper component
-==========================================================
+
+
+Quick example of a framework component
+======================================
+
+The example below shows some fragments how a designer component would be implemented in the framework. Note that the (overridden) components of the framework do the actual work. Wrapper components make sure these
+components can communicate with the different applications.
 
 ```C#
-/// This file implements a simple designer
-
-/// Note the inclusion of the framework in the reference
-using SustainabilityOpen.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-/// The namespace can be whatever you want it to be
-namespace SimpleComponentsExample
-{
+...
     /// <summary>
     /// Class overrides from the SODesigner class
     /// </summary>
     public class SimpleDesignerExample : SODesigner
     {
-        /// <summary>
-        /// Constructor
-        /// Note the name assessment you will need to pass to the base class.
-        /// </summary>
-        public SimpleDesignerExample()
-            : base("simple_designer_0001")
-        {
-        }
+...
         /// <summary>
         /// Overriding the RunDesigner method.
         /// This method will be run by the framework to make the design.
@@ -44,9 +31,66 @@ namespace SimpleComponentsExample
             this.AddObject(new Beam_HE200A());
         }
     }
-}
+...
 ```
 
+Quick example of a Grasshopper component
+========================================
+
+The framework component is wrapped in a Grasshopper component so that it can be used by Grasshopper, see the example below.
+
+```C#
+namespace SimpleComponentsExample
+{
+    /// <summary>
+    /// The component class implements the SODesigner_Component class
+    /// </summary>
+    public class SimpleDesignerExample_Component : SODesigner_Component
+    {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public SimpleDesignerExample_Component()
+            : base("SimpleDesigner", "SimpleDesigner", "Register a simple designer", new SimpleDesignerExample())
+        {
+        }
+        /// <summary>
+        /// You will need to override this method to register the inputs for the designer.
+        /// </summary>
+        /// <param name="pManager">Grasshopper's input parameter manager</param>
+        protected override void RegisterInputParams(Grasshopper.Kernel.GH_Component.GH_InputParamManager pManager)
+        {
+            // does nothing
+        }
+        /// <summary>
+        /// You will need to override this method to register the outputs for the designer.
+        /// </summary>
+        /// <param name="pManager">Grasshopper's output parameter manager</param>
+        protected override void RegisterOutputParams(Grasshopper.Kernel.GH_Component.GH_OutputParamManager pManager)
+        {
+            // Note that you will need to call the RegisterOutputParams method of the base class to register the default output parameters.
+            base.RegisterOutputParams(pManager);   
+        }
+        /// <summary>
+        /// You will need to override this method to solve the component.
+        /// </summary>
+        /// <param name="DA">Grasshopper's DataAccess interface</param>
+        protected override void SolveInstance(Grasshopper.Kernel.IGH_DataAccess DA)
+        {
+            /// Note that you will need to call the SolveInstance method of the base class to process the default parameters and connect them to the framework.
+            base.SolveInstance(DA);
+        }
+        /// <summary>
+        /// You will need to override this Guid with an unique identifier for each class.
+        /// </summary>
+        public override Guid ComponentGuid
+        {
+            get { return new Guid("{303EAE03-EAFF-4379-ACFD-9ABAE9289E6D}"); }
+        }
+
+    }
+}
+```
 
 License
 =======

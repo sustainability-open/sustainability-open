@@ -1,5 +1,5 @@
 How to develop your own extensions for the sustainability-open framework
-------------------------------------------------------------------------
+========================================================================
 
 This document contains some instructions how to develop your own extensions for the sustainability-open framework. Please note that there is a seperate document that covers development for the framework itself.
 
@@ -38,3 +38,20 @@ This step-by-step guide assumes that you are using Visual Studio.
  6. The first thing you probably want to do is write some designer, analysis or assessment. Implement the SODesigner, SOAnalysis or SOAssessment class to make your own. The method you want to override is called RunDesigner(), RunAnalysis or RunAssessment.
  6. Probably the other thing you want to do is making components for Grasshopper. Implement the SODesigner_Component, SOAnalysis_Component or SOAssessment_Component to do this. Don't forget to call a method's base when overriding a method so that its parent gets executed. 
  7. And start writing your code...
+
+License
+=======
+
+Copyright 2012-2013 Delft University of Technology, BEMNext Lab and contributors
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
