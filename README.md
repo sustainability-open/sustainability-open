@@ -24,7 +24,7 @@ The framework consists of a number of abstract classes, which we call components
 
  1. Designers: Designers produce a ‘design’ on which the analysis and assessment components can work.
  2. Analysis components: the analysis components take in a number of design components that aggregated contain the design and perform one or more analyses on the design. The analysis components produce an output for assessment components to use. An example could be an analysis that adds up all materials into their total quantities.
-3. Assessment components: The assessment components take a number of analysis outputs in and perform one or more assessments to produce an assessment result. An example could be an assessment that calculates the total embodied energy in the design from the material quantities.
+ 3. Assessment components: The assessment components take a number of analysis outputs in and perform one or more assessments to produce an assessment result. An example could be an assessment that calculates the total embodied energy in the design from the material quantities.
 
 At the moment there is one special helper component in the framework, the QTOAnalysis, which actually does some work. QTOAnalysis stands for Quantity Take Off Analysis. We have added this component to the framework as we expect that almost any project will use this component. In the future more helper components might be added to the framework.
 
