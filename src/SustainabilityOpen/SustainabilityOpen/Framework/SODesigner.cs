@@ -43,7 +43,18 @@ namespace SustainabilityOpen.Framework
         /// <param name="physicalObject">Physical object to add</param>
         public void AddObject(SOPhysicalObject physicalObject)
         {
+            if (this.m_ResultingObjects == null) { this.m_ResultingObjects = new List<SOPhysicalObject>(); }
+
             this.m_ResultingObjects.Add(physicalObject);
+        }
+
+        /// <summary>
+        /// Clears the physical objects from the designers
+        /// </summary>
+        public void ClearObjects()
+        {
+            if (this.m_ResultingObjects == null) { return; }
+            this.m_ResultingObjects.Clear();
         }
 
         /// <summary>

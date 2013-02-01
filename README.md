@@ -2,7 +2,7 @@ sustainability-open
 ===================
 (c) Copyright BEMNext Lab and contributors
 Open framework for sustainability assessment and optimisation in the built environment
-Version 0.0.1
+Version 0.0.2-alpha
 
 SustainabilityOpen is an initiative to make the built environment a better place. By providing open-source tooling to the building industry we hope to stimulate that every building and structure will become more sustainable. We are also trying to deploy new and quantitative approaches to assess sustainability in an open-source environment.
 

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Framework\SOAnalysis.cs" />
     <Compile Include="Framework\SOAssessment.cs" />
+    <Compile Include="Framework\SOFramework.cs" />
     <Compile Include="Grasshopper\SOAnalysis_Component.cs" />
     <Compile Include="Grasshopper\SOAnalysis_GHData.cs" />
     <Compile Include="Grasshopper\SOAnalysis_GHParam.cs" />
@@ -76,8 +77,11 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)\$(ProjectName).gha"
-Copy "$(TargetDir)\*.gha" "c:\so\"</PostBuildEvent>
+    <PostBuildEvent>Del "c:\so\SustainabilityOpen.dll"
+Del "c:\so\SustainabilityOpen.gha"
+Copy "$(TargetPath)" "$(TargetDir)\$(ProjectName).gha"
+Copy "$(TargetDir)\$(ProjectName).dll" "c:\so\"
+Copy "$(TargetDir)\$(ProjectName).gha" "c:\so\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

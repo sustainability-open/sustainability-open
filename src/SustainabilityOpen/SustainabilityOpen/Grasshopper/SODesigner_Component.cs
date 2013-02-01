@@ -43,6 +43,7 @@ namespace SustainabilityOpen.Grasshopper
             if (this.m_Designer == null) { return; }
             try
             {
+                this.m_Designer.ClearObjects();
                 this.m_Designer.RunDesigner();
             }
             catch (Exception)

@@ -35,7 +35,7 @@ namespace SustainabilityOpen.QTO
         {
             if (this.Designers == null) { return; }
 
-            this.m_TextualOutput = "";
+            this.m_TextualOutput = "sustainability-open v" + SOFramework.VERSION + "\n\n";
             this.m_MaterialQuantities.Clear();
             foreach (SODesigner designer in this.Designers)
             {
