@@ -2,7 +2,7 @@
 
 <project name="sustainability-open" default="build" basedir=".">
 
-  <property name="release.version" value="0.0.1"/>
+  <property name="release.version" value="0.0.2-alpha"/>
 
   <property name="build.dir" value="build"/>
   <property name="release.dir" value="release"/>
