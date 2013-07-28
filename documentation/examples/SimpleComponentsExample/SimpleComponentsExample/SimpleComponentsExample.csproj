@@ -48,6 +48,14 @@
       <HintPath>C:\so\SustainabilityOpen.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SustainabilityOpen.Grasshopper">
+      <HintPath>..\..\..\..\..\..\so\SustainabilityOpen.Grasshopper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SustainabilityOpen.QTO">
+      <HintPath>..\..\..\..\..\..\so\SustainabilityOpen.QTO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

@@ -31,18 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GH_IO">
-      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\GH_IO.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Grasshopper">
-      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\Grasshopper.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RhinoCommon">
-      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,33 +43,20 @@
     <Compile Include="Framework\SOAnalysis.cs" />
     <Compile Include="Framework\SOAssessment.cs" />
     <Compile Include="Framework\SOFramework.cs" />
-    <Compile Include="Grasshopper\SOAnalysis_Component.cs" />
-    <Compile Include="Grasshopper\SOAnalysis_GHData.cs" />
-    <Compile Include="Grasshopper\SOAnalysis_GHParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Grasshopper\SOAssessment_Component.cs" />
-    <Compile Include="Grasshopper\SOAssessment_GHData.cs" />
-    <Compile Include="Grasshopper\SOAssessment_GHParam.cs" />
     <Compile Include="Framework\SOBase.cs" />
     <Compile Include="Framework\SODesigner.cs" />
-    <Compile Include="Grasshopper\SODesigner_Component.cs" />
-    <Compile Include="Grasshopper\SODesigner_GHData.cs" />
-    <Compile Include="Grasshopper\SODesigner_GHParam.cs" />
-    <Compile Include="QTO\QTOAnalysis.cs" />
-    <Compile Include="QTO\QTOAnalysis_Component.cs" />
     <Compile Include="Framework\SOMaterial.cs" />
     <Compile Include="Framework\SOMaterialQuantity.cs" />
     <Compile Include="Framework\SOPhysicalObject.cs" />
-    <Compile Include="Grasshopper\SustainabilityOpenFramework.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Del "c:\so\SustainabilityOpen.dll"
-Del "c:\so\SustainabilityOpen.gha"
-Copy "$(TargetPath)" "$(TargetDir)\$(ProjectName).gha"
-Copy "$(TargetDir)\$(ProjectName).dll" "c:\so\"
-Copy "$(TargetDir)\$(ProjectName).gha" "c:\so\"</PostBuildEvent>
+    <PostBuildEvent>Copy "$(TargetDir)\$(ProjectName).dll" "c:\so\"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>Del "c:\so\SustainabilityOpen.dll"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
