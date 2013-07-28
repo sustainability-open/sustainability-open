@@ -17,6 +17,7 @@
 
 /// Note the inclusion of the framework in the reference
 using SustainabilityOpen.Framework;
+using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;

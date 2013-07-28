@@ -13,13 +13,12 @@
 ///    limitations under the License.
 /// 
 
-using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SustainabilityOpen.Framework
+namespace SustainabilityOpen.Framework.Design
 {
     /// <summary>
     /// Physical object

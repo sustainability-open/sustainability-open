@@ -13,38 +13,68 @@
 ///    limitations under the License.
 /// 
 
-using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SustainabilityOpen.Framework
+namespace SustainabilityOpen.Framework.Design
 {
+    /// <summary>
+    /// Material quantity class
+    /// </summary>
     public class SOMaterialQuantity
     {
         private SOMaterial m_Material;
         private double m_Quantity;
         private string m_Unit;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="material">Material</param>
+        /// <param name="quantity">Quantity</param>
+        /// <param name="unit">Unit of the quantity</param>
         public SOMaterialQuantity(SOMaterial material, double quantity, string unit)
         {
             this.m_Material = material;
             this.m_Quantity = quantity;
             this.m_Unit = unit;
         }
+
+        /// <summary>
+        /// Returns the material
+        /// </summary>
         public SOMaterial Material
         {
             get { return this.m_Material; }
         }
+
+        /// <summary>
+        /// Returns the quantity
+        /// </summary>
         public double Quantity
         {
             get { return this.m_Quantity; }
             set { this.m_Quantity = value; }
         }
+
+        /// <summary>
+        /// Returns the unit
+        /// </summary>
         public string Unit
         {
             get { return this.m_Unit; }
+        }
+
+        /// <summary>
+        /// Returns a human readable string of the material quantity
+        /// </summary>
+        /// <returns>String</returns>
+        public override string ToString()
+        {
+            if (this.m_Material == null) { throw new Exception("Material not defined"); }
+            return this.m_Quantity.ToString() + " " + this.m_Unit + " of " + this.m_Material.Name;
         }
     }
 }
