@@ -51,6 +51,9 @@
     <Compile Include="Framework\SOPhysicalObject.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="_design\FrameworkDesign.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetDir)\$(ProjectName).dll" "c:\so\"</PostBuildEvent>
