@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{589FAF13
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{6D8C21E7-1AC3-42CD-9BD3-796C0D4D9B4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentsWithInputExample", "..\..\documentation\examples\SimpleComponentsExample\ComponentsWithInputExample\ComponentsWithInputExample.csproj", "{EE998E1C-6CAD-4F57-9A5D-13279CBE75B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentsWithInputExample", "..\..\documentation\examples\ComponentsWithInputExample\ComponentsWithInputExample.csproj", "{EE998E1C-6CAD-4F57-9A5D-13279CBE75B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleComponentsExample", "..\..\documentation\examples\SimpleComponentsExample\SimpleComponentsExample\SimpleComponentsExample.csproj", "{A225E1D2-15C6-4E90-BD09-D22388615608}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleComponentsExample", "..\..\documentation\examples\SimpleComponentsExample\SimpleComponentsExample.csproj", "{A225E1D2-15C6-4E90-BD09-D22388615608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
