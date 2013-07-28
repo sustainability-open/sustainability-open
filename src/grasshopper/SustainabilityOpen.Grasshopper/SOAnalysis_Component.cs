@@ -29,8 +29,8 @@ namespace SustainabilityOpen.Grasshopper
             : base(name, 
                    nickname, 
                    description, 
-                   SustainabilityOpenFramework.CATEGORY, 
-                   SustainabilityOpenFramework.ANALYSIS_SUBCATEGORY)
+                   GHSustainabilityOpenFramework.CATEGORY, 
+                   GHSustainabilityOpenFramework.ANALYSIS_SUBCATEGORY)
         {
             this.m_Analysis = analysis;
         }

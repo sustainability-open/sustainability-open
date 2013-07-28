@@ -62,7 +62,7 @@
     <Compile Include="SODesigner_Component.cs" />
     <Compile Include="SODesigner_GHData.cs" />
     <Compile Include="SODesigner_GHParam.cs" />
-    <Compile Include="SustainabilityOpenFramework.cs" />
+    <Compile Include="GHSustainabilityOpenFramework.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SustainabilityOpen\SustainabilityOpen\SustainabilityOpen.csproj">

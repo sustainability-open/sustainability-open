@@ -20,7 +20,7 @@ using System.Text;
 
 namespace SustainabilityOpen.Grasshopper
 {
-    public class SustainabilityOpenFramework
+    public class GHSustainabilityOpenFramework
     {
         public const string CATEGORY = "SustainabilityOpen";
         public const string DESIGNER_SUBCATEGORY = "Designer";

@@ -25,8 +25,8 @@ namespace SustainabilityOpen.Grasshopper
     {
         public SODesigner_GHParam()
             : base(new GH_InstanceDescription("Designer parameter", "designer", "Register a Designer parameter", 
-                   SustainabilityOpenFramework.CATEGORY,
-                   SustainabilityOpenFramework.DESIGNER_SUBCATEGORY))
+                   GHSustainabilityOpenFramework.CATEGORY,
+                   GHSustainabilityOpenFramework.DESIGNER_SUBCATEGORY))
         {
         }
         public override GH_Exposure Exposure

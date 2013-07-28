@@ -29,8 +29,8 @@ namespace SustainabilityOpen.Grasshopper
             : base(name, 
                    nickname, 
                    description, 
-                   SustainabilityOpenFramework.CATEGORY, 
-                   SustainabilityOpenFramework.DESIGNER_SUBCATEGORY)
+                   GHSustainabilityOpenFramework.CATEGORY, 
+                   GHSustainabilityOpenFramework.DESIGNER_SUBCATEGORY)
         {
             this.m_Designer = designer;
         }

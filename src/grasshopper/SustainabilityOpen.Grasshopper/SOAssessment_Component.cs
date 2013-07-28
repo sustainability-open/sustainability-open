@@ -29,8 +29,8 @@ namespace SustainabilityOpen.Grasshopper
             : base(name, 
                    nickname, 
                    description, 
-                   SustainabilityOpenFramework.CATEGORY, 
-                   SustainabilityOpenFramework.ASSESSMENT_SUBCATEGORY)
+                   GHSustainabilityOpenFramework.CATEGORY, 
+                   GHSustainabilityOpenFramework.ASSESSMENT_SUBCATEGORY)
         {
             this.m_Assessment = assessment;
         }
