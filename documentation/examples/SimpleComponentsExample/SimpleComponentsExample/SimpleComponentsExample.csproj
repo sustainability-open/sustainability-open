@@ -75,7 +75,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)\$(ProjectName).gha"
-Copy "$(TargetDir)\SustainabilityOpen.dll" "c:\so\"
 Copy "$(TargetDir)\*.gha" "c:\so\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
