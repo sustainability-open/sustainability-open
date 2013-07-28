@@ -41,24 +41,24 @@
     <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAIAIAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAIAA=</HashCode>
-      <FileName>Framework\SOPhysicalObject.cs</FileName>
+      <FileName>Framework\Design\SOPhysicalObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="MaterialQuantities" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="SustainabilityOpen.Framework.SOMaterial" Collapsed="true">
+  <Class Name="SustainabilityOpen.Framework.Design.SOMaterial" Collapsed="true">
     <Position X="6.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Framework\SOMaterial.cs</FileName>
+      <FileName>Framework\Design\SOMaterial.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOMaterialQuantity">
     <Position X="3.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAQAA=</HashCode>
-      <FileName>Framework\SOMaterialQuantity.cs</FileName>
+      <FileName>Framework\Design\SOMaterialQuantity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_Material" />

@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\SOBase.cs" />
     <Compile Include="Framework\SODesigner.cs" />
-    <Compile Include="Framework\SOMaterial.cs" />
-    <Compile Include="Framework\SOMaterialQuantity.cs" />
-    <Compile Include="Framework\SOPhysicalObject.cs" />
+    <Compile Include="Framework\Design\SOMaterial.cs" />
+    <Compile Include="Framework\Design\SOMaterialQuantity.cs" />
+    <Compile Include="Framework\Design\SOPhysicalObject.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
