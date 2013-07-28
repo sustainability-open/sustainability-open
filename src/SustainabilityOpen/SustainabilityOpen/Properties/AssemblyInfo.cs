@@ -25,7 +25,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BEMNext Lab and contributors")]
 [assembly: AssemblyProduct("SustainabilityOpen")]
-[assembly: AssemblyCopyright("Copyright ©  2012-2013")]
+[assembly: AssemblyCopyright("Copyright © 2012-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
