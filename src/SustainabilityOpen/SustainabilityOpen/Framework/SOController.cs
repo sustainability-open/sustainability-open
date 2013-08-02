@@ -24,6 +24,29 @@ namespace SustainabilityOpen.Framework
     /// </summary>
     public class SOController
     {
-        public static SOController Instance;
+        private static volatile SOController m_Instance;
+        private static object m_SyncRoot = new Object();
+
+        /// <summary>
+        /// Singleton
+        /// </summary>
+        public static SOController Instance
+        {
+            get
+            {
+                if (m_Instance == null)
+                {
+                    lock (m_SyncRoot)
+                    {
+                        if (m_Instance == null)
+                        {
+                            m_Instance = new SOController();
+                        }
+                    }
+                }
+                return m_Instance;
+            }
+        }
+
     }
 }
