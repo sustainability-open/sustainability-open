@@ -48,14 +48,6 @@
       <HintPath>C:\so\SustainabilityOpen.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SustainabilityOpen.Grasshopper">
-      <HintPath>..\..\..\..\..\..\so\SustainabilityOpen.Grasshopper.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SustainabilityOpen.QTO">
-      <HintPath>..\..\..\..\..\..\so\SustainabilityOpen.QTO.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +63,16 @@
     <Compile Include="SimpleDesignerExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleDesignerExample_Component.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\extras\SustainabilityOpen.QTO\SustainabilityOpen.QTO.csproj">
+      <Project>{13DC3EDA-E088-4103-9308-BD724FA6B49F}</Project>
+      <Name>SustainabilityOpen.QTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\grasshopper\SustainabilityOpen.Grasshopper\SustainabilityOpen.Grasshopper.csproj">
+      <Project>{F4893C26-BBDD-4A3E-8C89-D739C192CA8A}</Project>
+      <Name>SustainabilityOpen.Grasshopper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

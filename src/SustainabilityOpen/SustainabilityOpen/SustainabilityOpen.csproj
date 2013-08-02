@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Framework\SOAnalysis.cs" />
     <Compile Include="Framework\SOAssessment.cs" />
+    <Compile Include="Framework\SOController.cs" />
     <Compile Include="Framework\SOFramework.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\SOBase.cs" />
@@ -50,7 +51,9 @@
     <Compile Include="Framework\SOMaterialQuantity.cs" />
     <Compile Include="Framework\SOPhysicalObject.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Framework\Design\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="_design\FrameworkDesign.cd" />
   </ItemGroup>

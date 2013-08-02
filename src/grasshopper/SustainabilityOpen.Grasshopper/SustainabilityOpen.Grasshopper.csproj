@@ -32,15 +32,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GH_IO">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Grasshopper for Rhino 5\GH_IO.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\GH_IO.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Grasshopper">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Grasshopper for Rhino 5\Grasshopper.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\Grasshopper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RhinoCommon">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Grasshopper for Rhino 5\rh_common\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
