@@ -27,6 +27,8 @@ namespace SustainabilityOpen.Framework
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
 
+        public SOBase[] Entities;
+
         /// <summary>
         /// Singleton
         /// </summary>
