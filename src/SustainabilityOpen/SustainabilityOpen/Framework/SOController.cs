@@ -58,6 +58,10 @@ namespace SustainabilityOpen.Framework
             this.m_Entities.Add(entity);
         }
 
+        public void ClearEntities()
+        {
+        }
+
         /// <summary>
         /// Singleton
         /// </summary>
