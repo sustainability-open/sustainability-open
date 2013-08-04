@@ -48,8 +48,14 @@ namespace SustainabilityOpen.Framework
             }
         }
 
+        /// <summary>
+        /// Add an entity to the controller
+        /// </summary>
+        /// <param name="entity">Entity to add</param>
         public void AddEntity(SOBase entity)
         {
+            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+            this.m_Entities.Add(entity);
         }
 
         /// <summary>
