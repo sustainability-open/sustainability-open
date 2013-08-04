@@ -36,6 +36,18 @@ namespace SustainabilityOpen.Framework
         public SOBase(string name)
         {
             this.m_Name = name;
+            this.m_Parent = null;
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">Name of the component</param>
+        /// <param name="parent">Parent of the component</param>
+        public SOBase(string name, SOBase parent)
+        {
+            this.m_Name = name;
+            this.m_Parent = parent;
         }
 
         /// <summary>
@@ -46,6 +58,12 @@ namespace SustainabilityOpen.Framework
             get { return this.m_Name; }
         }
 
-        public SOBase Parent;
+        /// <summary>
+        /// Returns the parent
+        /// </summary>
+        public SOBase Parent
+        {
+            get { return this.m_Parent; }
+        }
     }
 }
