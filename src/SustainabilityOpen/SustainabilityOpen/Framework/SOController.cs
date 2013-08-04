@@ -58,8 +58,13 @@ namespace SustainabilityOpen.Framework
             this.m_Entities.Add(entity);
         }
 
+        /// <summary>
+        /// Clears the entities in the controller
+        /// </summary>
         public void ClearEntities()
         {
+            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+            this.m_Entities.Clear();
         }
 
         /// <summary>
