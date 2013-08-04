@@ -27,6 +27,7 @@ namespace SustainabilityOpen.Framework
     {
         // Properties
         private string m_Name;
+        private SOBase m_Parent;
 
         /// <summary>
         /// Constructor
@@ -44,5 +45,7 @@ namespace SustainabilityOpen.Framework
         {
             get { return this.m_Name; }
         }
+
+        public SOBase Parent;
     }
 }
