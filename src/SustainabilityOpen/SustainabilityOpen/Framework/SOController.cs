@@ -26,8 +26,27 @@ namespace SustainabilityOpen.Framework
     {
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
+        private List<SOBase> m_Entities;
 
-        public SOBase[] Entities;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public SOController()
+        {
+            this.m_Entities = new List<SOBase>();
+        }
+
+        /// <summary>
+        /// Returns the different entities in the controller
+        /// </summary>
+        public SOBase[] Entities
+        {
+            get
+            {
+                if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+                return this.m_Entities.ToArray();
+            }
+        }
 
         /// <summary>
         /// Singleton
