@@ -56,8 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Beam_HE300A.cs" />
-    <Compile Include="DesignerWithInputExample.cs" />
+    <Compile Include="so\Beam_HE300A.cs" />
+    <Compile Include="so\DesignerWithInputExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +65,9 @@
       <Project>{F4893C26-BBDD-4A3E-8C89-D739C192CA8A}</Project>
       <Name>SustainabilityOpen.Grasshopper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Grasshopper\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
