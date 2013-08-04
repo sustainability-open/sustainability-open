@@ -33,7 +33,15 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public SOController()
         {
-            this.m_Entities = new List<SOBase>();
+            this.ReInit();
+        }
+
+        /// <summary>
+        /// Reinitialise the controller
+        /// </summary>
+        public void ReInit()
+        {
+            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
         }
 
         /// <summary>
@@ -43,7 +51,7 @@ namespace SustainabilityOpen.Framework
         {
             get
             {
-                if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+                this.ReInit();
                 return this.m_Entities.ToArray();
             }
         }
@@ -54,7 +62,7 @@ namespace SustainabilityOpen.Framework
         /// <param name="entity">Entity to add</param>
         public void AddEntity(SOBase entity)
         {
-            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+            this.ReInit();
             this.m_Entities.Add(entity);
         }
 
@@ -63,7 +71,7 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public void ClearEntities()
         {
-            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+            this.ReInit();
             this.m_Entities.Clear();
         }
 
