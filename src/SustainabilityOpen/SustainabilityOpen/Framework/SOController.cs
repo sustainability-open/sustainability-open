@@ -48,6 +48,10 @@ namespace SustainabilityOpen.Framework
             }
         }
 
+        public void AddEntity(SOBase entity)
+        {
+        }
+
         /// <summary>
         /// Singleton
         /// </summary>
