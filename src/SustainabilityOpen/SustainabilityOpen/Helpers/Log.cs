@@ -33,7 +33,7 @@ namespace SustainabilityOpen.Helpers
         /// Starts the log
         /// </summary>
         /// <param name="logfile">Log filename</param>
-        public void StartLog(string logfile)
+        public static void StartLog(string logfile)
         {
         }
 
