@@ -39,15 +39,25 @@ namespace SustainabilityOpen.Helpers
         public static void StartLog(string logfile)
         {
             Log log = Log.LogInstance;
-            log.LogFile = logfile;
 
-            // register an event handler that loads as soon as the domain unloads to close the log file
-            AppDomain domain = AppDomain.CurrentDomain;
-            domain.DomainUnload += new EventHandler(domain_DomainUnload);
+            if (log != null)
+            {
+                if (!log.Active)
+                {
+                    log.LogFile = logfile;
 
-            // set up the filestream and streamwriter for the log
-            log.m_Fs = new FileStream(logfile, FileMode.Create);
-            log.m_Tw = new StreamWriter(log.m_Fs);
+                    // register an event handler that loads as soon as the domain unloads to close the log file
+                    AppDomain domain = AppDomain.CurrentDomain;
+                    domain.DomainUnload += new EventHandler(domain_DomainUnload);
+
+                    // close everything down before you start a new log
+                    LogInstance.closeAllStreams();
+
+                    // set up the filestream and streamwriter for the log
+                    log.m_Fs = new FileStream(logfile, FileMode.Create);
+                    log.m_Tw = new StreamWriter(log.m_Fs);
+                }
+            }
         }
 
         /// <summary>
@@ -116,6 +126,15 @@ namespace SustainabilityOpen.Helpers
         /// <param name="message">Message to add to the log</param>
         public static void Add(string message)
         {
+            if (Log.LogInstance != null)
+            {
+                if (Log.LogInstance.Active)
+                {
+                    LogInstance.m_Tw.WriteLine(message);
+                    LogInstance.m_Tw.Flush();
+                    LogInstance.m_Fs.Flush();
+                }
+            }
         }
 
         /// <summary>
