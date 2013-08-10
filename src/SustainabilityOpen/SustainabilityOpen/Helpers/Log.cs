@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -28,6 +29,8 @@ namespace SustainabilityOpen.Helpers
         private static volatile Log m_Instance;
         private static object m_SyncRoot = new Object();
         private string m_LogFile = "";
+        private FileStream m_Fs;
+        private TextWriter m_Tw;
 
         /// <summary>
         /// Starts the log
@@ -37,6 +40,34 @@ namespace SustainabilityOpen.Helpers
         {
             Log log = Log.LogInstance;
             log.LogFile = logfile;
+
+            // register an event handler that loads as soon as the domain unloads to close the log file
+            AppDomain domain = AppDomain.CurrentDomain;
+            domain.DomainUnload += new EventHandler(domain_DomainUnload);
+
+            // set up the filestream and streamwriter for the log
+            log.m_Fs = new FileStream(logfile, FileMode.Create);
+            log.m_Tw = new StreamWriter(log.m_Fs);
+        }
+
+        /// <summary>
+        /// Event handler to close down the log file
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Arguments</param>
+        private static void domain_DomainUnload(object sender, EventArgs e)
+        {
+            if (Log.LogInstance != null)
+            {
+                if (Log.LogInstance.m_Tw != null)
+                {
+                    Log.LogInstance.m_Tw.Close();
+                }
+                if (Log.LogInstance.m_Fs != null)
+                {
+                    Log.LogInstance.m_Fs.Close();
+                }
+            }
         }
 
         /// <summary>
