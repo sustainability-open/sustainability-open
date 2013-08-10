@@ -30,6 +30,14 @@ namespace SustainabilityOpen.Helpers
         private string m_LogFile;
 
         /// <summary>
+        /// Starts the log
+        /// </summary>
+        /// <param name="logfile">Log filename</param>
+        public void StartLog(string logfile)
+        {
+        }
+
+        /// <summary>
         /// Singleton
         /// </summary>
         public static Log LogInstance
