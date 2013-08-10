@@ -23,10 +23,11 @@ namespace SustainabilityOpen.Helpers
     /// <summary>
     /// Log singleton
     /// </summary>
-    public class Log
+    public sealed class Log
     {
         private static volatile Log m_Instance;
         private static object m_SyncRoot = new Object();
+        private string m_LogFile;
 
         /// <summary>
         /// Singleton
@@ -47,6 +48,14 @@ namespace SustainabilityOpen.Helpers
                 }
                 return m_Instance;
             }
+        }
+
+        /// <summary>
+        /// Log filename
+        /// </summary>
+        public string LogFile
+        {
+            get { return m_LogFile; }
         }
     }
 }

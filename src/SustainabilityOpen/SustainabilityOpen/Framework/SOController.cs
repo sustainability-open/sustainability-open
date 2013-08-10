@@ -22,7 +22,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Singleton class that will controll the solution of the sustainability-open framework
     /// </summary>
-    public class SOController
+    public sealed class SOController
     {
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
