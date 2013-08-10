@@ -111,6 +111,14 @@ namespace SustainabilityOpen.Helpers
         }
 
         /// <summary>
+        /// Add a message to the log
+        /// </summary>
+        /// <param name="message">Message to add to the log</param>
+        public static void Add(string message)
+        {
+        }
+
+        /// <summary>
         /// Log filename
         /// </summary>
         public string LogFile
