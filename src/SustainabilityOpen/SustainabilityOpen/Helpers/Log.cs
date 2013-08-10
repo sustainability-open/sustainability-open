@@ -127,7 +127,13 @@ namespace SustainabilityOpen.Helpers
         /// </summary>
         public bool Active
         {
-            get { return true; }
+            get
+            {
+                bool active = true;
+                if (Log.LogInstance.m_Fs == null) { active = false; }
+                if (Log.LogInstance.m_Tw == null) { active = false; }
+                return active;
+            }
         }
     }
 }
