@@ -55,6 +55,8 @@ namespace SustainabilityOpen.Helpers
         /// </summary>
         public static void StopLog()
         {
+            Log.LogInstance.closeAllStreams();
+            Log.LogInstance.m_LogFile = "";
         }
 
         /// <summary>
@@ -67,10 +69,12 @@ namespace SustainabilityOpen.Helpers
                 if (Log.LogInstance.m_Tw != null)
                 {
                     Log.LogInstance.m_Tw.Close();
+                    Log.LogInstance.m_Tw = null;
                 }
                 if (Log.LogInstance.m_Fs != null)
                 {
                     Log.LogInstance.m_Fs.Close();
+                    Log.LogInstance.m_Fs = null;
                 }
             }
         }
