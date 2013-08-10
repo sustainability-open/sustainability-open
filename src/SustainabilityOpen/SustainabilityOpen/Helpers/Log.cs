@@ -36,6 +36,7 @@ namespace SustainabilityOpen.Helpers
         public static void StartLog(string logfile)
         {
             Log log = Log.LogInstance;
+            log.LogFile = logfile;
         }
 
         /// <summary>
@@ -67,7 +68,10 @@ namespace SustainabilityOpen.Helpers
             get { return m_LogFile; }
             set
             {
-                if (this.m_LogFile != "") { throw new Exception("Log filename cannot be reset"); }
+                if ((value != this.m_LogFile) && (this.m_LogFile != ""))
+                {
+                    throw new Exception("Log filename cannot be reset");
+                }
                 this.m_LogFile = value;
             }
         }
