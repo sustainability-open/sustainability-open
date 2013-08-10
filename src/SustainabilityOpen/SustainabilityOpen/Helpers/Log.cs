@@ -20,7 +20,33 @@ using System.Text;
 
 namespace SustainabilityOpen.Helpers
 {
+    /// <summary>
+    /// Log singleton
+    /// </summary>
     public class Log
     {
+        private static volatile Log m_Instance;
+        private static object m_SyncRoot = new Object();
+
+        /// <summary>
+        /// Singleton
+        /// </summary>
+        public static Log LogInstance
+        {
+            get
+            {
+                if (m_Instance == null)
+                {
+                    lock (m_SyncRoot)
+                    {
+                        if (m_Instance == null)
+                        {
+                            m_Instance = new Log();
+                        }
+                    }
+                }
+                return m_Instance;
+            }
+        }
     }
 }
