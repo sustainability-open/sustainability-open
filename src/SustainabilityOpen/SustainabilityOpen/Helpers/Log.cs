@@ -121,5 +121,13 @@ namespace SustainabilityOpen.Helpers
                 this.m_LogFile = value;
             }
         }
+
+        /// <summary>
+        /// Returns if the log is active or not
+        /// </summary>
+        public bool Active
+        {
+            get { return true; }
+        }
     }
 }
