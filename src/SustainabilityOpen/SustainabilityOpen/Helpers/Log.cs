@@ -27,7 +27,7 @@ namespace SustainabilityOpen.Helpers
     {
         private static volatile Log m_Instance;
         private static object m_SyncRoot = new Object();
-        private string m_LogFile;
+        private string m_LogFile = "";
 
         /// <summary>
         /// Starts the log
@@ -65,7 +65,11 @@ namespace SustainabilityOpen.Helpers
         public string LogFile
         {
             get { return m_LogFile; }
-            set { this.m_LogFile = value; }
+            set
+            {
+                if (this.m_LogFile != "") { throw new Exception("Log filename cannot be reset"); }
+                this.m_LogFile = value;
+            }
         }
     }
 }
