@@ -35,6 +35,7 @@ namespace SustainabilityOpen.Helpers
         /// <param name="logfile">Log filename</param>
         public static void StartLog(string logfile)
         {
+            Log log = Log.LogInstance;
         }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace SustainabilityOpen.Helpers
         public string LogFile
         {
             get { return m_LogFile; }
+            set { this.m_LogFile = value; }
         }
     }
 }
