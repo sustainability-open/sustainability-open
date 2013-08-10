@@ -51,11 +51,16 @@ namespace SustainabilityOpen.Helpers
         }
 
         /// <summary>
-        /// Event handler to close down the log file
+        /// Stops the logging
         /// </summary>
-        /// <param name="sender">Sender</param>
-        /// <param name="e">Arguments</param>
-        private static void domain_DomainUnload(object sender, EventArgs e)
+        public static void StopLog()
+        {
+        }
+
+        /// <summary>
+        /// Closes all streams
+        /// </summary>
+        private void closeAllStreams()
         {
             if (Log.LogInstance != null)
             {
@@ -68,6 +73,16 @@ namespace SustainabilityOpen.Helpers
                     Log.LogInstance.m_Fs.Close();
                 }
             }
+        }
+
+        /// <summary>
+        /// Event handler to close down the log file
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Arguments</param>
+        private static void domain_DomainUnload(object sender, EventArgs e)
+        {
+            Log.LogInstance.closeAllStreams();
         }
 
         /// <summary>
