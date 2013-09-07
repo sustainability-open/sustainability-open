@@ -24,6 +24,7 @@ namespace SustainabilityOpen.Framework
     {
         private List<SOComponent> m_Parents;
         private List<SOComponent> m_Children;
+        private string m_GUID;
         public SOComponent()
         {
             this.ReInit();
@@ -33,6 +34,7 @@ namespace SustainabilityOpen.Framework
         {
             this.m_Parents = new List<SOComponent>();
             this.m_Children = new List<SOComponent>();
+            this.m_GUID = "";
         }
 
         public SOComponent[] Parents
@@ -51,6 +53,11 @@ namespace SustainabilityOpen.Framework
                 if (this.m_Children == null) { this.ReInit(); }
                 return this.m_Children.ToArray();
             }
+        }
+        public string GUID
+        {
+            get { return this.m_GUID; }
+            set { this.m_GUID = value; }
         }
     }
 }
