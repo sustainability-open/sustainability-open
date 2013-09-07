@@ -49,6 +49,9 @@ namespace SustainabilityOpen.Grasshopper
             // check dependencies
             if (this.m_Analysis == null) { return; }
 
+            // check if the controller is online
+            SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
+
             List<SODesigner_GHData> designerList = new List<SODesigner_GHData>();
             DA.GetDataList<SODesigner_GHData>(0, designerList);
             this.m_Analysis.ClearDesigners();

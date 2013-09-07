@@ -33,6 +33,7 @@ namespace SustainabilityOpen.Grasshopper
                    GHSustainabilityOpenFramework.DESIGNER_SUBCATEGORY)
         {
             this.m_Designer = designer;
+            SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
         }
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
@@ -40,6 +41,9 @@ namespace SustainabilityOpen.Grasshopper
         }
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            // check if the controller is online
+            SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
+            
             if (this.m_Designer == null) { return; }
             try
             {
