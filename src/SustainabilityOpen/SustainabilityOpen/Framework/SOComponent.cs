@@ -23,19 +23,34 @@ namespace SustainabilityOpen.Framework
     public class SOComponent
     {
         private List<SOComponent> m_Parents;
+        private List<SOComponent> m_Children;
+        public SOComponent()
+        {
+            this.ReInit();
+        }
+
         private void ReInit()
         {
             this.m_Parents = new List<SOComponent>();
+            this.m_Children = new List<SOComponent>();
         }
 
         public SOComponent[] Parents
         {
             get
             {
-                if (this.m_Parents == null) { return null; }
+                if (this.m_Parents == null) { this.ReInit(); }
                 return this.m_Parents.ToArray();
             }
 
+        }
+        public SOComponent[] Children
+        {
+            get
+            {
+                if (this.m_Children == null) { this.ReInit(); }
+                return this.m_Children.ToArray();
+            }
         }
     }
 }
