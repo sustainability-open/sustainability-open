@@ -76,6 +76,13 @@ namespace SustainabilityOpen.Framework
         }
 
         /// <summary>
+        /// Solves the entities
+        /// </summary>
+        public void Solve()
+        {
+        }
+
+        /// <summary>
         /// Singleton
         /// </summary>
         public static SOController Instance
