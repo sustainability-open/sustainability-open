@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Framework\SOAnalysis.cs" />
     <Compile Include="Framework\SOAssessment.cs" />
+    <Compile Include="Framework\SOComponent.cs" />
     <Compile Include="Framework\SOController.cs" />
     <Compile Include="Framework\SOFramework.cs" />
     <Compile Include="Helpers\Log.cs" />
