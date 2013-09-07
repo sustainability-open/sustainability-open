@@ -28,7 +28,6 @@ namespace SustainabilityOpen.Framework
             this.m_Parents = new List<SOComponent>();
         }
 
-
         public SOComponent[] Parents
         {
             get
