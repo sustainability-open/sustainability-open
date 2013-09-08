@@ -49,6 +49,9 @@
       <Name>SustainabilityOpen</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="_design\QTO.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetDir)\$(ProjectName).dll" "c:\so\"</PostBuildEvent>

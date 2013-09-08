@@ -13,35 +13,35 @@
 ///    limitations under the License.
 /// 
 
-// This file implements a steel HE200A beam
-
-// Note the inclusion of the framework in the reference
-using SustainabilityOpen.Framework;
-using SustainabilityOpen.Framework.Design;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// The namespace can be whatever you want it to be
-namespace SimpleComponentsExample
+namespace SustainabilityOpen.Framework.Design
 {
     /// <summary>
-    /// Class overrides the SOPhysicalObject class
+    /// Material class
     /// </summary>
-    public class Beam_HE200A : SOPhysicalObject
+    public class SOMaterial
     {
+        private string m_Name;
+
         /// <summary>
         /// Constructor
-        /// Note the name of the physical object you will need to pass to the base class.
         /// </summary>
-        public Beam_HE200A()
-            : base("HE200A")
+        /// <param name="name">Name of the material</param>
+        public SOMaterial(string name)
         {
-            // Adding a material quantity to the beam of 1 m3 of the material steel.
-            this.AddMaterialQuantity(new SOMaterial("steel"), 1, "m3");
+            this.m_Name = name;
         }
 
+        /// <summary>
+        /// Returns the name of the material
+        /// </summary>
+        public string Name
+        {
+            get { return this.m_Name; }
+        }
     }
 }

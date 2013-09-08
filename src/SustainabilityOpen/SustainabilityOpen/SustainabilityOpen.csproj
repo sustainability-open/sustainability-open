@@ -49,15 +49,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\SOBase.cs" />
     <Compile Include="Framework\SODesigner.cs" />
-    <Compile Include="Framework\SOMaterial.cs" />
-    <Compile Include="Framework\SOMaterialQuantity.cs" />
-    <Compile Include="Framework\SOPhysicalObject.cs" />
+    <Compile Include="Framework\Design\SOMaterial.cs" />
+    <Compile Include="Framework\Design\SOMaterialQuantity.cs" />
+    <Compile Include="Framework\Design\SOPhysicalObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\Design\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_design\FrameworkDesign.cd" />
+    <None Include="_design\Design.cd" />
+    <None Include="_design\Framework.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
