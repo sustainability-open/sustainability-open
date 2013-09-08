@@ -13,6 +13,7 @@
 ///    limitations under the License.
 /// 
 
+using SustainabilityOpen.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,11 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
-    public abstract class SODesign
+    public abstract class SODesign : SOBaseNamed
     {
+        public SODesign(string name)
+            : base(name)
+        {
+        }
     }
 }
