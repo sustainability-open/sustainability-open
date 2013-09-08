@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Designer entity
     /// </summary>
-    public class SODesigner : SOBase
+    public class SODesigner : SOComponent
     {
         // Properties
         private List<SOPhysicalObject> m_ResultingObjects;

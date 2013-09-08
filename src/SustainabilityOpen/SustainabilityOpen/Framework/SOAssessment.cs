@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Assessment entity
     /// </summary>
-    public class SOAssessment : SOBase 
+    public class SOAssessment : SOComponent
     {
         private List<SOAnalysis> m_Analyses;
 

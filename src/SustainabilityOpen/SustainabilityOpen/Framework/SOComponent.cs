@@ -20,12 +20,16 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework
 {
-    public class SOComponent
+    public abstract class SOComponent : SOBase
     {
         private List<SOComponent> m_Parents;
         private List<SOComponent> m_Children;
         private string m_GUID;
-        public SOComponent()
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public SOComponent(string name) : base(name)
         {
             this.ReInit();
         }

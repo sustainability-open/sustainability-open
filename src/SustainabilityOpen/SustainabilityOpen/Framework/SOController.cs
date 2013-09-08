@@ -26,7 +26,7 @@ namespace SustainabilityOpen.Framework
     {
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
-        private List<SOBase> m_Entities;
+        private List<SOComponent> m_Entities;
 
         /// <summary>
         /// Constructor
@@ -41,13 +41,13 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public void ReInit()
         {
-            if (this.m_Entities == null) { this.m_Entities = new List<SOBase>(); }
+            if (this.m_Entities == null) { this.m_Entities = new List<SOComponent>(); }
         }
 
         /// <summary>
         /// Returns the different entities in the controller
         /// </summary>
-        public SOBase[] Entities
+        public SOComponent[] Entities
         {
             get
             {
@@ -60,7 +60,7 @@ namespace SustainabilityOpen.Framework
         /// Add an entity to the controller
         /// </summary>
         /// <param name="entity">Entity to add</param>
-        public void AddEntity(SOBase entity)
+        public void AddEntity(SOComponent entity)
         {
             this.ReInit();
             this.m_Entities.Add(entity);

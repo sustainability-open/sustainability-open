@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Analysis entity
     /// </summary>
-    public class SOAnalysis : SOBase
+    public class SOAnalysis : SOComponent
     {
         // Properties
         private List<SODesigner> m_Designers;
