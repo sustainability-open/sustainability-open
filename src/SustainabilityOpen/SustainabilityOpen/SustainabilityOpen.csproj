@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\Design\SOComponent.cs" />
     <Compile Include="Framework\Design\SODesign.cs" />
     <Compile Include="Framework\Design\SODesignAlternative.cs" />
     <Compile Include="Framework\SOAnalysis.cs" />
