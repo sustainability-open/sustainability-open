@@ -28,7 +28,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOComponent" Collapsed="true">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+    <Position X="7.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOComponent.cs</FileName>
@@ -36,20 +36,26 @@
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SODesign" Collapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="m_Alternatives" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesign.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Alternatives" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SODesignAlternative" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesignAlternative.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOPart" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOPart.cs</FileName>

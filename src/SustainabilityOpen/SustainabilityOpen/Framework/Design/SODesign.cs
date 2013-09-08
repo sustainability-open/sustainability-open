@@ -23,9 +23,26 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SODesign : SOBaseNamed
     {
+        private List<SODesignAlternative> m_Alternatives;
+
         public SODesign(string name)
             : base(name)
         {
+            this.ReInit();
+        }
+
+        private void ReInit()
+        {
+            this.m_Alternatives = new List<SODesignAlternative>();
+        }
+
+        public SODesignAlternative[] Alternatives
+        {
+            get
+            {
+                if (this.m_Alternatives == null) { this.ReInit(); }
+                return this.m_Alternatives.ToArray();
+            }
         }
     }
 }
