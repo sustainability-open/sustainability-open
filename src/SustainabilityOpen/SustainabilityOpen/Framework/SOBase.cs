@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Base class for sustainability-open entities
     /// </summary>
-    public abstract class SOBase
+    public abstract class SOBaseNamed
     {
         // Properties
         private string m_Name;
@@ -32,7 +32,7 @@ namespace SustainabilityOpen.Framework
         /// Constructor
         /// </summary>
         /// <param name="name">Name of the component</param>
-        public SOBase(string name)
+        public SOBaseNamed(string name)
         {
             this.m_Name = name;
         }

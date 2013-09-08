@@ -20,7 +20,7 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
-    public class SODesign
+    public abstract class SODesign
     {
     }
 }

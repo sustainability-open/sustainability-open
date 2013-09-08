@@ -20,7 +20,7 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework
 {
-    public abstract class SOComponent : SOBase
+    public abstract class SOComponent : SOBaseNamed
     {
         private List<SOComponent> m_Parents;
         private List<SOComponent> m_Children;
