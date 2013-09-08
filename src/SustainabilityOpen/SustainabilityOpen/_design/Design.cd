@@ -3,7 +3,7 @@
   <Class Name="SustainabilityOpen.Framework.Design.SOMaterial" Collapsed="true">
     <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOMaterial.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -20,12 +20,40 @@
   <Class Name="SustainabilityOpen.Framework.Design.SOPhysicalObject">
     <Position X="3.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAIAIAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAIAA=</HashCode>
+      <HashCode>AAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAIAA=</HashCode>
       <FileName>Framework\Design\SOPhysicalObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="MaterialQuantities" />
     </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SustainabilityOpen.Framework.Design.SOComponent" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Design\SOComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SustainabilityOpen.Framework.Design.SODesign" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Design\SODesign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SustainabilityOpen.Framework.Design.SODesignAlternative" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Design\SODesignAlternative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SustainabilityOpen.Framework.Design.SOPart" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Framework\Design\SOPart.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
