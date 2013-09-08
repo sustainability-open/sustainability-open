@@ -13,6 +13,7 @@
 ///    limitations under the License.
 /// 
 
+using SustainabilityOpen.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,25 +24,14 @@ namespace SustainabilityOpen.Framework.Design
     /// <summary>
     /// Material class
     /// </summary>
-    public class SOMaterial
+    public class SOMaterial : SOBaseNamed
     {
-        private string m_Name;
-
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name">Name of the material</param>
-        public SOMaterial(string name)
+        public SOMaterial(string name) : base(name)
         {
-            this.m_Name = name;
-        }
-
-        /// <summary>
-        /// Returns the name of the material
-        /// </summary>
-        public string Name
-        {
-            get { return this.m_Name; }
         }
     }
 }
