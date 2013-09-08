@@ -23,19 +23,17 @@ namespace SustainabilityOpen.Framework.Design
     /// <summary>
     /// Physical object
     /// </summary>
-    public abstract class SOPhysicalObject
+    public abstract class SOPhysicalObject : SOBaseNamed
     {
         // Properties
-        private string m_Name;
         private List<SOMaterialQuantity> m_MaterialQuantities;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name">Name of the object</param>
-        public SOPhysicalObject(string name)
+        public SOPhysicalObject(string name) : base(name)
         {
-            this.m_Name = name;
             this.m_MaterialQuantities = new List<SOMaterialQuantity>();
         }
 
@@ -64,14 +62,6 @@ namespace SustainabilityOpen.Framework.Design
         public SOMaterialQuantity[] MaterialQuantities
         {
             get { return this.m_MaterialQuantities.ToArray(); }
-        }
-
-        /// <summary>
-        /// Returns the name
-        /// </summary>
-        public string Name
-        {
-            get { return this.m_Name; }
         }
     }
 }
