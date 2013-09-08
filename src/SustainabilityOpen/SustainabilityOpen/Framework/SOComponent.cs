@@ -43,10 +43,14 @@ namespace SustainabilityOpen.Framework
 
         public void AddParent(SOComponent parent)
         {
+            if (this.m_Parents == null) { this.ReInit(); }
+            this.m_Parents.Add(parent);
         }
 
         public void AddChild(SOComponent child)
         {
+            if (this.m_Children == null) { this.ReInit(); }
+            this.m_Children.Add(child);
         }
 
         public SOComponent[] Parents
