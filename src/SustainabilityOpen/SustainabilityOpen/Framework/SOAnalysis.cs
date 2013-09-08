@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Analysis entity
     /// </summary>
-    public class SOAnalysis : SOComponent
+    public class SOAnalysis : SOParametricComponent
     {
         /// <summary>
         /// Constructor
@@ -65,7 +65,7 @@ namespace SustainabilityOpen.Framework
             get
             {
                 List<SODesigner> designers = new List<SODesigner>();
-                foreach (SOComponent component in this.Parents)
+                foreach (SOParametricComponent component in this.Parents)
                 {
                     if (component.GetType().IsSubclassOf(typeof(SODesigner)) || (component.GetType() == typeof(SODesigner)))
                     {

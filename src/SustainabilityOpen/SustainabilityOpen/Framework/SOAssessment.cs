@@ -23,7 +23,7 @@ namespace SustainabilityOpen.Framework
     /// <summary>
     /// Assessment entity
     /// </summary>
-    public class SOAssessment : SOComponent
+    public class SOAssessment : SOParametricComponent
     {
         public SOAssessment(string name) : base(name)
         {
@@ -51,7 +51,7 @@ namespace SustainabilityOpen.Framework
             get
             {
                 List<SOAnalysis> analyses = new List<SOAnalysis>();
-                foreach (SOComponent component in this.Parents)
+                foreach (SOParametricComponent component in this.Parents)
                 {
                     if (component.GetType().IsSubclassOf(typeof(SOAnalysis)) || (component.GetType() == typeof(SOAnalysis)))
                     {
