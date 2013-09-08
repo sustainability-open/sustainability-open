@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Framework\Design\SODesign.cs" />
+    <Compile Include="Framework\Design\SODesignAlternative.cs" />
     <Compile Include="Framework\SOAnalysis.cs" />
     <Compile Include="Framework\SOAssessment.cs" />
     <Compile Include="Framework\SOParametricComponent.cs" />
