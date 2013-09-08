@@ -55,10 +55,14 @@ namespace SustainabilityOpen.Framework
 
         public void ClearParents()
         {
+            if (this.m_Parents == null) { this.ReInit(); }
+            this.m_Parents.Clear();
         }
 
         public void ClearChildren()
         {
+            if (this.m_Children == null) { this.ReInit(); }
+            this.m_Children.Clear();
         }
 
         public SOComponent[] Parents
