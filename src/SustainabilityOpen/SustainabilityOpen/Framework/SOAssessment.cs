@@ -25,21 +25,18 @@ namespace SustainabilityOpen.Framework
     /// </summary>
     public class SOAssessment : SOComponent
     {
-        private List<SOAnalysis> m_Analyses;
-
         public SOAssessment(string name) : base(name)
         {
-            this.m_Analyses = new List<SOAnalysis>();
         }
 
         public void ClearAnalysis()
         {
-            this.m_Analyses.Clear();
+            this.ClearParents();
         }
 
         public void AddAnalysis(SOAnalysis analysis)
         {
-            this.m_Analyses.Add(analysis);
+            this.AddParent(analysis);
         }
 
         /// <summary>
@@ -51,7 +48,19 @@ namespace SustainabilityOpen.Framework
 
         public SOAnalysis[] Analyses
         {
-            get { return this.m_Analyses.ToArray(); }
+            get
+            {
+                List<SOAnalysis> analyses = new List<SOAnalysis>();
+                foreach (SOComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SOAnalysis)) || (component.GetType() == typeof(SOAnalysis)))
+                    {
+                        analyses.Add((SOAnalysis)component);
+                    }
+                }
+                return analyses.ToArray();
+            }
+
         }
     }
 }
