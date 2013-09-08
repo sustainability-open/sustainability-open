@@ -25,16 +25,12 @@ namespace SustainabilityOpen.Framework
     /// </summary>
     public class SOAnalysis : SOComponent
     {
-        // Properties
-        private List<SODesigner> m_Designers;
-
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name">Name of the analysis</param>
         public SOAnalysis(string name) : base(name)
         {
-            this.m_Designers = new List<SODesigner>();
         }
 
         /// <summary>
@@ -42,7 +38,7 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public void ClearDesigners()
         {
-            this.m_Designers.Clear();
+            this.ClearParents();
         }
 
         /// <summary>
@@ -51,7 +47,7 @@ namespace SustainabilityOpen.Framework
         /// <param name="designer"></param>
         public void AddDesigner(SODesigner designer)
         {
-            this.m_Designers.Add(designer);
+            this.AddParent(designer);
         }
 
         /// <summary>
@@ -66,7 +62,18 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public SODesigner[] Designers
         {
-            get { return this.m_Designers.ToArray(); }
+            get
+            {
+                List<SODesigner> designers = new List<SODesigner>();
+                foreach (SOComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SODesigner)) || (component.GetType() == typeof(SODesigner)))
+                    {
+                        designers.Add((SODesigner)component);
+                    }
+                }
+                return designers.ToArray();
+            }
         }
     }
 }
