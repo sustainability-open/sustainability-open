@@ -53,6 +53,14 @@ namespace SustainabilityOpen.Framework
             this.m_Children.Add(child);
         }
 
+        public void ClearParents()
+        {
+        }
+
+        public void ClearChildren()
+        {
+        }
+
         public SOComponent[] Parents
         {
             get
