@@ -23,6 +23,7 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SODesign : SOBaseNamed
     {
+        public const string DEFAULT_ALTERNATIVE_NAME = "default";
         private List<SODesignAlternative> m_Alternatives;
 
         public SODesign(string name)
@@ -34,6 +35,7 @@ namespace SustainabilityOpen.Framework.Design
         private void ReInit()
         {
             this.m_Alternatives = new List<SODesignAlternative>();
+            this.m_Alternatives.Add(new SODesignAlternative(SODesign.DEFAULT_ALTERNATIVE_NAME));
         }
 
         public SODesignAlternative[] Alternatives
