@@ -41,6 +41,8 @@ namespace SustainabilityOpen.Framework
             this.m_GUID = "";
         }
 
+
+
         public SOComponent[] Parents
         {
             get
