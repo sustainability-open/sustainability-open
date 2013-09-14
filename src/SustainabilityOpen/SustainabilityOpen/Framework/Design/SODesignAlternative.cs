@@ -57,6 +57,13 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Clears the components from design alternative
+        /// </summary>
+        public void ClearComponents()
+        {
+        }
+
+        /// <summary>
         /// Components part of this design
         /// </summary>
         public SOComponent[] Components
