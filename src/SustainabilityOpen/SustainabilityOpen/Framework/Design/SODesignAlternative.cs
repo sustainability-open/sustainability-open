@@ -31,5 +31,13 @@ namespace SustainabilityOpen.Framework.Design
             : base(name)
         {
         }
+
+        public SOComponent Components
+        {
+            get
+            {
+                return null;
+            }
+        }
     }
 }
