@@ -23,6 +23,8 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SOComponent : SOBaseNamed
     {
+        private List<SOComponent> m_Components;
+
         /// <summary>
         /// Component
         /// </summary>
@@ -30,6 +32,23 @@ namespace SustainabilityOpen.Framework.Design
         public SOComponent(string name)
             : base(name)
         {
+            this.ReInit();
+        }
+
+        /// <summary>
+        /// Reinitialises the component
+        /// </summary>
+        private void ReInit()
+        {
+            this.ReInitSubComponents();
+        }
+
+        /// <summary>
+        /// Reinitialises the subcomponents
+        /// </summary>
+        private void ReInitSubComponents()
+        {
+            this.m_Components = new List<SOComponent>();
         }
 
         /// <summary>
@@ -39,7 +58,8 @@ namespace SustainabilityOpen.Framework.Design
         {
             get
             {
-                return null;
+                if (this.m_Components == null) { this.ReInitSubComponents(); }
+                return this.m_Components.ToArray();
             }
         }
 
