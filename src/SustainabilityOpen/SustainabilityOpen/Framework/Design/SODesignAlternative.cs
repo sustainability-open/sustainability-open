@@ -23,6 +23,10 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SODesignAlternative : SOBaseNamed
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">Name of the design alternative</param>
         public SODesignAlternative(string name)
             : base(name)
         {
