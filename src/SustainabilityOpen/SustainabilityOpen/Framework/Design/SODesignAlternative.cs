@@ -46,6 +46,10 @@ namespace SustainabilityOpen.Framework.Design
             this.m_Components = new List<SOComponent>();
         }
 
+        public void AddComponent(SOComponent component)
+        {
+        }
+
         /// <summary>
         /// Components part of this design
         /// </summary>
