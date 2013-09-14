@@ -136,6 +136,7 @@
         <include name="..\src\tests\SustainabilityOpenTests.QTO\**\*.cs"/>
       </sources>
       <references>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
         <include name="${build.dir}\SustainabilityOpen.QTO.dll"/>
         <include name="${nunit.dir}\framework\nunit.framework.dll"/>
       </references>
