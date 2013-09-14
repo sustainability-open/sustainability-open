@@ -77,5 +77,16 @@ namespace SustainabilityOpen.Framework
         {
             get { return this.m_ResultingObjects.ToArray(); }
         }
+
+        /// <summary>
+        /// Returns the current design alternative for the designer to use
+        /// </summary>
+        public SODesignAlternative CurrentDesignAlternative
+        {
+            get
+            {
+                return null;
+            }
+        }
     }
 }
