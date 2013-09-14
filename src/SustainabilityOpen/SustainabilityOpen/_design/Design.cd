@@ -27,7 +27,7 @@
       <Property Name="MaterialQuantity" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="SustainabilityOpen.Framework.Design.SOComponent">
+  <Class Name="SustainabilityOpen.Framework.Design.SOComponent" Collapsed="true">
     <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -35,6 +35,7 @@
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Parts" />
+      <Property Name="SubComponents" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SODesign" Collapsed="true">
@@ -43,7 +44,7 @@
       <Field Name="m_Alternatives" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAQAAIAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgBAAAAAAAAAAAAAAAAAAQAAIAAAIAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesign.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -53,7 +54,7 @@
   <Class Name="SustainabilityOpen.Framework.Design.SODesignAlternative" Collapsed="true">
     <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAASAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesignAlternative.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
