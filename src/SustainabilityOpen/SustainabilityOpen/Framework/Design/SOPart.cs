@@ -21,8 +21,19 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
+    /// <summary>
+    /// Part of a component
+    /// A part consists of a single material
+    /// </summary>
     public class SOPart : SOPhysicalObject
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">Name of the part</param>
+        /// <param name="material">Material</param>
+        /// <param name="quantity">Quantity of the material</param>
+        /// <param name="unit">Unit to measure the quantity</param>
         public SOPart(string name, SOMaterial material, double quantity, string unit)
             : base(name, material, quantity, unit)
         {

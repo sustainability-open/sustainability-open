@@ -23,11 +23,18 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SOComponent : SOBaseNamed
     {
+        /// <summary>
+        /// Component
+        /// </summary>
+        /// <param name="name">Name of the component</param>
         public SOComponent(string name)
             : base(name)
         {
         }
 
+        /// <summary>
+        /// Sub-components of the component
+        /// </summary>
         public SOComponent[] SubComponents
         {
             get
@@ -36,6 +43,9 @@ namespace SustainabilityOpen.Framework.Design
             }
         }
 
+        /// <summary>
+        /// Parts in the component
+        /// </summary>
         public SOPart[] Parts
         {
             get
