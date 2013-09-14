@@ -12,6 +12,8 @@
 ///    See the License for the specific language governing permissions and
 ///    limitations under the License.
 /// 
+
+using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -127,6 +129,17 @@ namespace SustainabilityOpen.Framework
         public ControllerState State
         {
             get { return this.m_State; }
+        }
+
+        /// <summary>
+        /// Design that is managed by the controller
+        /// </summary>
+        public SODesign Design
+        {
+            get
+            {
+                return null;
+            }
         }
 
     }
