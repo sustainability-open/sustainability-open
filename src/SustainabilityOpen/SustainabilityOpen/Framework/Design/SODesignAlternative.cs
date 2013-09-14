@@ -21,6 +21,9 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
+    /// <summary>
+    /// SODesignAlternative
+    /// </summary>
     public class SODesignAlternative : SOBaseNamed
     {
         /// <summary>
@@ -32,6 +35,9 @@ namespace SustainabilityOpen.Framework.Design
         {
         }
 
+        /// <summary>
+        /// Components part of this design
+        /// </summary>
         public SOComponent[] Components
         {
             get

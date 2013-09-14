@@ -21,23 +21,36 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
+    /// <summary>
+    /// SODesign
+    /// </summary>
     public class SODesign : SOBaseNamed
     {
         public const string DEFAULT_ALTERNATIVE_NAME = "default";
         private List<SODesignAlternative> m_Alternatives;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name">Name of the design</param>
         public SODesign(string name)
             : base(name)
         {
             this.ReInit();
         }
 
+        /// <summary>
+        /// Reinitialises the design
+        /// </summary>
         private void ReInit()
         {
             this.m_Alternatives = new List<SODesignAlternative>();
             this.m_Alternatives.Add(new SODesignAlternative(SODesign.DEFAULT_ALTERNATIVE_NAME));
         }
 
+        /// <summary>
+        /// Returns the design alternatives part of this design
+        /// </summary>
         public SODesignAlternative[] Alternatives
         {
             get
