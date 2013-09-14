@@ -21,7 +21,7 @@ using System.Text;
 
 namespace SustainabilityOpen.Framework.Design
 {
-    public class SOPart : SOBaseNamed
+    public class SOPart : SOPhysicalObject
     {
         public SOPart(string name)
             : base(name)
