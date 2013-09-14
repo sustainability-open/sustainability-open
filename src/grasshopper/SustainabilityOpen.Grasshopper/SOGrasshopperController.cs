@@ -74,6 +74,8 @@ namespace SustainabilityOpen.Grasshopper
             }
             return m_Instance;
         }
+
+#if DEBUG
         public static void DocumentOverview(GH.Kernel.GH_Document doc)
         {
             if (doc != null)
@@ -86,11 +88,11 @@ namespace SustainabilityOpen.Grasshopper
                 }
             }
         }
-
+#endif
 
         static void ghDocument_ObjectsDeleted(object sender, GH.Kernel.GH_DocObjectEventArgs e)
         {
-#if DEBUG
+#if DETAILEDDEBUG
             Rhino.RhinoApp.WriteLine("Objects deleted event");
             DocumentOverview((GH.Kernel.GH_Document)sender);
 #endif
@@ -98,7 +100,7 @@ namespace SustainabilityOpen.Grasshopper
 
         static void ghDocument_ObjectsAdded(object sender, GH.Kernel.GH_DocObjectEventArgs e)
         {
-#if DEBUG
+#if DETAILEDDEBUG
             Rhino.RhinoApp.WriteLine("Objects added event");
             DocumentOverview((GH.Kernel.GH_Document)sender);
 #endif
@@ -109,12 +111,32 @@ namespace SustainabilityOpen.Grasshopper
 #if DEBUG
             Rhino.RhinoApp.WriteLine("Solution end event");
 #endif
+            if (m_Instance != null)
+            {
+                if (m_Instance.m_Controller != null)
+                {
+                    m_Instance.m_Controller.SetState(SOController.ControllerState.idle);
+                }
+            }
+#if DEBUG
+            Rhino.RhinoApp.WriteLine("> Controller state: " + m_Instance.m_Controller.State.ToString());
+#endif
         }
 
         static void ghDocument_SolutionStart(object sender, GH.Kernel.GH_SolutionEventArgs e)
         {
 #if DEBUG            
             Rhino.RhinoApp.WriteLine("Solution start event");
+#endif
+            if (m_Instance != null)
+            {
+                if (m_Instance.m_Controller != null)
+                {
+                    m_Instance.m_Controller.SetState(SOController.ControllerState.new_solution);
+                }
+            }
+#if DEBUG
+            Rhino.RhinoApp.WriteLine("> Controller state: " + m_Instance.m_Controller.State.ToString());
 #endif
         }
 

@@ -28,7 +28,7 @@ namespace SustainabilityOpen.Framework
     {
         public enum ControllerState
         {
-            unsolved,
+            idle,
             new_solution,
             first_designer_passed
         }
@@ -53,7 +53,7 @@ namespace SustainabilityOpen.Framework
         public void ReInit()
         {
             if (this.m_Entities == null) { this.m_Entities = new List<SOParametricComponent>(); }
-            this.m_State = ControllerState.unsolved;
+            this.m_State = ControllerState.idle;
             this.ReInitDesign();
         }
 

@@ -63,6 +63,11 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public virtual void RunDesigner()
         {
+            if (SOController.Instance.State == SOController.ControllerState.new_solution)
+            {
+                SOController.Instance.Design.ClearDesign();
+                SOController.Instance.SetState(SOController.ControllerState.first_designer_passed);
+            }
         }
 
         /// <summary>

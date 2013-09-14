@@ -49,6 +49,9 @@ namespace ComponentsWithInputExample
         /// </summary>
         public override void RunDesigner()
         {
+            // It is important that you run the base designer
+            base.RunDesigner();
+
             for (int i = 0; i < this.m_NumberOfBeams; i++)
             {
                 this.AddObject(new Beam_HE300A());

@@ -64,6 +64,9 @@ namespace SustainabilityOpen.Grasshopper
             // return the designer data
             SODesigner_GHData data = new SODesigner_GHData(this.m_Designer);
             DA.SetData(0, data);
+#if DEBUG
+            Rhino.RhinoApp.WriteLine("> Controller state: " + SOController.Instance.State.ToString());
+#endif
         }
         public SODesigner Designer
         {

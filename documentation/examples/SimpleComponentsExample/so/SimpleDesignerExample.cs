@@ -44,6 +44,9 @@ namespace SimpleComponentsExample
         /// </summary>
         public override void RunDesigner()
         {
+            // It is important that you run the base designer
+            base.RunDesigner();
+
             // Adding two beams with the designer
             this.AddObject(new Beam_HE200A());
             this.AddObject(new Beam_HE200A());
