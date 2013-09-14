@@ -24,6 +24,7 @@ namespace SustainabilityOpen.Framework.Design
     public class SOComponent : SOBaseNamed
     {
         private List<SOComponent> m_Components;
+        private List<SOPart> m_Parts;
 
         /// <summary>
         /// Component
@@ -41,6 +42,7 @@ namespace SustainabilityOpen.Framework.Design
         private void ReInit()
         {
             this.ReInitSubComponents();
+            this.ReInitParts();
         }
 
         /// <summary>
@@ -49,6 +51,14 @@ namespace SustainabilityOpen.Framework.Design
         private void ReInitSubComponents()
         {
             this.m_Components = new List<SOComponent>();
+        }
+
+        /// <summary>
+        /// Reinitialises the parts
+        /// </summary>
+        private void ReInitParts()
+        {
+            this.m_Parts = new List<SOPart>();
         }
 
         /// <summary>
@@ -70,7 +80,8 @@ namespace SustainabilityOpen.Framework.Design
         {
             get
             {
-                return null;
+                if (this.m_Parts == null) { this.ReInitParts(); }
+                return this.m_Parts.ToArray();
             }
         }
     }
