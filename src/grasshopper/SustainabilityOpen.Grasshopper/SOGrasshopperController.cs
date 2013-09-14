@@ -16,6 +16,7 @@
 #define DEBUG
 
 using GH = Grasshopper;
+using SustainabilityOpen.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace SustainabilityOpen.Grasshopper
     {
         private static volatile SOGrasshopperController m_Instance;
         private static object m_SyncRoot = new Object();
+        private SOController m_Controller;
         private bool m_Registered = false;
 
         /// <summary>
@@ -47,6 +49,7 @@ namespace SustainabilityOpen.Grasshopper
                     if (m_Instance == null)
                     {
                         m_Instance = new SOGrasshopperController();
+                        m_Instance.m_Controller = SOController.Instance;
 #if DEBUG
                         Rhino.RhinoApp.Write("new... ");
 #endif
