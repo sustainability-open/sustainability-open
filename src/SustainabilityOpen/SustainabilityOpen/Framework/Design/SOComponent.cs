@@ -62,6 +62,22 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Adds a subcomponent to this component
+        /// </summary>
+        /// <param name="component">Subcomponent to add</param>
+        public void AddSubComponent(SOComponent component)
+        {
+        }
+
+        /// <summary>
+        /// Adds a part to this component
+        /// </summary>
+        /// <param name="part">Part to add to this component</param>
+        public void AddPart(SOPart part)
+        {
+        }
+
+        /// <summary>
         /// Sub-components of the component
         /// </summary>
         public SOComponent[] SubComponents
