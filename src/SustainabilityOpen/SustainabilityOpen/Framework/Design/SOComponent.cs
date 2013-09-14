@@ -94,6 +94,7 @@ namespace SustainabilityOpen.Framework.Design
         /// </summary>
         public void ClearParts()
         {
+            this.ReInitParts();
         }
 
         /// <summary>
