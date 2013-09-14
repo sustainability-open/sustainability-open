@@ -40,7 +40,7 @@
       <Field Name="m_Alternatives" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAQAAIAAAIAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesign.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -50,7 +50,7 @@
   <Class Name="SustainabilityOpen.Framework.Design.SODesignAlternative" Collapsed="true">
     <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesignAlternative.cs</FileName>
     </TypeIdentifier>
   </Class>

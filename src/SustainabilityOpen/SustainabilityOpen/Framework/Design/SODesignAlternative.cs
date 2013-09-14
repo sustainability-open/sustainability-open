@@ -32,7 +32,7 @@ namespace SustainabilityOpen.Framework.Design
         {
         }
 
-        public SOComponent Components
+        public SOComponent[] Components
         {
             get
             {
