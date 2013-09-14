@@ -49,6 +49,13 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Clears the design
+        /// </summary>
+        public void ClearDesign()
+        {
+        }
+
+        /// <summary>
         /// Returns the design alternatives part of this design
         /// </summary>
         public SODesignAlternative[] Alternatives
