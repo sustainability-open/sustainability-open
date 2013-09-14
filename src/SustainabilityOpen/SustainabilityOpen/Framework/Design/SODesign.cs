@@ -54,6 +54,8 @@ namespace SustainabilityOpen.Framework.Design
         /// <param name="alternative">Alternative to add</param>
         public void AddAlternative(SODesignAlternative alternative)
         {
+            if (this.m_Alternatives == null) { this.ReInit(); }
+            this.m_Alternatives.Add(alternative);
         }
 
         /// <summary>
