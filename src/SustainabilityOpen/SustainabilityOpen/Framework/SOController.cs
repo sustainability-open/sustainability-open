@@ -85,6 +85,15 @@ namespace SustainabilityOpen.Framework
         }
 
         /// <summary>
+        /// Sets the controller state to a new state value
+        /// </summary>
+        /// <param name="stateToSet">State to set the controller state to</param>
+        public void SetState(ControllerState stateToSet)
+        {
+            this.m_State = stateToSet;
+        }
+
+        /// <summary>
         /// Solves the entities
         /// </summary>
         public void Solve()
