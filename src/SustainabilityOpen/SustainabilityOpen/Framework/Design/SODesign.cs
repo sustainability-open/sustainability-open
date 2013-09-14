@@ -53,6 +53,7 @@ namespace SustainabilityOpen.Framework.Design
         /// </summary>
         public void ClearDesign()
         {
+            this.ReInit();
         }
 
         /// <summary>
