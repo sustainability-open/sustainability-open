@@ -82,6 +82,27 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Clears the subcomponents
+        /// </summary>
+        public void ClearSubComponents()
+        {
+        }
+
+        /// <summary>
+        /// Clears the parts
+        /// </summary>
+        public void ClearParts()
+        {
+        }
+
+        /// <summary>
+        /// Clears the component
+        /// </summary>
+        public void Clear()
+        {
+        }
+
+        /// <summary>
         /// Sub-components of the component
         /// </summary>
         public SOComponent[] SubComponents
