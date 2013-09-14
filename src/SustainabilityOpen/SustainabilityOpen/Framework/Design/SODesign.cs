@@ -28,6 +28,7 @@ namespace SustainabilityOpen.Framework.Design
     {
         public const string DEFAULT_ALTERNATIVE_NAME = "default";
         private List<SODesignAlternative> m_Alternatives;
+        private int m_CurrentIndex = 0;
 
         /// <summary>
         /// Constructor
@@ -46,6 +47,7 @@ namespace SustainabilityOpen.Framework.Design
         {
             this.m_Alternatives = new List<SODesignAlternative>();
             this.m_Alternatives.Add(new SODesignAlternative(SODesign.DEFAULT_ALTERNATIVE_NAME));
+            this.m_CurrentIndex = 0;
         }
 
         /// <summary>
@@ -56,6 +58,7 @@ namespace SustainabilityOpen.Framework.Design
         {
             if (this.m_Alternatives == null) { this.ReInit(); }
             this.m_Alternatives.Add(alternative);
+            this.m_CurrentIndex = this.m_Alternatives.Count - 1;
         }
 
         /// <summary>
@@ -86,7 +89,10 @@ namespace SustainabilityOpen.Framework.Design
         {
             get
             {
-                return null;
+                if (this.m_Alternatives == null) { this.ReInit(); }
+                if (this.m_CurrentIndex < 0) { this.m_CurrentIndex = 0; }
+                if (this.m_CurrentIndex > this.m_Alternatives.Count - 1) { this.m_CurrentIndex = this.m_Alternatives.Count - 1; }
+                return this.m_Alternatives[this.m_CurrentIndex];
             }
         }
     }
