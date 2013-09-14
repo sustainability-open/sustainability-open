@@ -28,7 +28,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOComponent" Collapsed="true">
-    <Position X="7.5" Y="5.75" Width="1.5" />
+    <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOComponent.cs</FileName>
@@ -53,6 +53,9 @@
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SODesignAlternative.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Components" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOPart" Collapsed="true">
     <Position X="7.5" Y="6.75" Width="1.5" />
