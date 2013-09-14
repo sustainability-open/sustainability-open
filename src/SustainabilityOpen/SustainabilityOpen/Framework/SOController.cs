@@ -24,8 +24,9 @@ namespace SustainabilityOpen.Framework
     /// </summary>
     public sealed class SOController
     {
-        private enum State
+        public enum ControllerState
         {
+            unsolved,
             new_solution,
             first_designer_passed
         }
@@ -33,6 +34,7 @@ namespace SustainabilityOpen.Framework
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
         private List<SOParametricComponent> m_Entities;
+        private ControllerState m_State;
 
         /// <summary>
         /// Constructor
@@ -48,6 +50,7 @@ namespace SustainabilityOpen.Framework
         public void ReInit()
         {
             if (this.m_Entities == null) { this.m_Entities = new List<SOParametricComponent>(); }
+            this.m_State = ControllerState.unsolved;
         }
 
         /// <summary>
@@ -107,6 +110,14 @@ namespace SustainabilityOpen.Framework
                 }
                 return m_Instance;
             }
+        }
+
+        /// <summary>
+        /// State of the controller
+        /// </summary>
+        public ControllerState State
+        {
+            get { return this.m_State; }
         }
 
     }
