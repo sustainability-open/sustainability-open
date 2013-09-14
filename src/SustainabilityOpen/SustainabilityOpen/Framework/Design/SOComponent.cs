@@ -67,6 +67,8 @@ namespace SustainabilityOpen.Framework.Design
         /// <param name="component">Subcomponent to add</param>
         public void AddSubComponent(SOComponent component)
         {
+            if (this.m_Components == null) { this.ReInitSubComponents(); }
+            this.m_Components.Add(component);
         }
 
         /// <summary>
