@@ -28,7 +28,7 @@ namespace SustainabilityOpen.Framework.Design
         {
         }
 
-        public SOComponent[] Components
+        public SOComponent[] SubComponents
         {
             get
             {
