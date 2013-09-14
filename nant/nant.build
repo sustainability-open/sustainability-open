@@ -2,7 +2,7 @@
 
 <project name="sustainability-open" default="build" basedir=".">
 
-  <property name="release.version" value="0.0.2-alpha"/>
+  <property name="release.version" value="0.0.2"/>
 
   <property name="build.dir" value="build"/>
   <property name="release.dir" value="release"/>
@@ -21,12 +21,21 @@
     <mkdir dir="${build.dir}\${release.dir}"/>
   </target>
 
-  <target name="build" description="Compiles the source code" depends="clean,build-prep">
+  <target name="build-SustainabilityOpen.dll" description="Compiles the source code of SustainabilityOpen.dll" depends="clean,build-prep">
     <csc target="library" output="${build.dir}\SustainabilityOpen.dll">
       <sources>
         <include name="..\src\SustainabilityOpen\SustainabilityOpen\**\*.cs"/>
       </sources>
+    </csc>
+  </target>
+
+  <target name="build-SustainabilityOpen.Grasshopper.dll" description="Compiles the source code of SustainabilityOpen.Grasshopper.dll" depends="clean,build-prep,build-SustainabilityOpen.dll">
+    <csc target="library" output="${build.dir}\SustainabilityOpen.Grasshopper.dll">
+      <sources>
+        <include name="..\src\grasshopper\SustainabilityOpen.Grasshopper\**\*.cs"/>
+      </sources>
       <references>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
         <include name="${gh.dir}\GH_IO.dll"/>
         <include name="${gh.dir}\Grasshopper.dll"/>
         <include name="${gh.dir}\rh_common\RhinoCommon.dll"/>
@@ -34,14 +43,49 @@
     </csc>
   </target>
 
-  <target name="convert-release" description="Converts the build to Grasshopper files" depends="build,release-prep">
-    <copy file="${build.dir}\SustainabilityOpen.dll"
-          tofile="${build.dir}\${release.dir}\SustainabilityOpen.gha"/>
+   <target name="build-SustainabilityOpen.QTO.dll" description="Compiles the source code of SustainabilityOpen.QTO.dll" depends="clean,build-prep,build-SustainabilityOpen.dll">
+    <csc target="library" output="${build.dir}\SustainabilityOpen.QTO.dll">
+      <sources>
+        <include name="..\src\extras\SustainabilityOpen.QTO\**\*.cs"/>
+      </sources>
+      <references>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
+      </references>
+    </csc>
+  </target>
+ 
+  <target name="build-SustainabilityOpen.QTO.Grasshopper.dll" description="Compiles the source code of SustainabilityOpen.QTO.Grasshopper.dll" depends="clean,build-prep,build-SustainabilityOpen.dll,build-SustainabilityOpen.QTO.dll,build-SustainabilityOpen.Grasshopper.dll">
+    <csc target="library" output="${build.dir}\SustainabilityOpen.QTO.Grasshopper.dll">
+      <sources>
+        <include name="..\src\SustainabilityOpen\SustainabilityOpen.QTO.Grasshopper\**\*.cs"/>
+      </sources>
+      <references>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
+        <include name="${build.dir}\SustainabilityOpen.Grasshopper.dll"/>
+        <include name="${build.dir}\SustainabilityOpen.QTO.dll"/>
+        <include name="${gh.dir}\GH_IO.dll"/>
+        <include name="${gh.dir}\Grasshopper.dll"/>
+        <include name="${gh.dir}\rh_common\RhinoCommon.dll"/>
+      </references>
+    </csc>
   </target>
 
-  <target name="assemble-release" description="Assembles all release files in a single directory">
-    <copy file="${build.dir}\SustainabilityOpen.dll"
-          todir="${build.dir}\${release.dir}\"/>
+
+  <target name="build" description="Compiles the source code" depends="build-SustainabilityOpen.dll,build-SustainabilityOpen.Grasshopper.dll,build-SustainabilityOpen.QTO.dll,build-SustainabilityOpen.QTO.Grasshopper.dll"/>
+
+  <target name="convert-release" description="Converts the build to Grasshopper files" depends="build,release-prep">
+    <copy file="${build.dir}\SustainabilityOpen.QTO.Grasshopper.dll"
+          tofile="${build.dir}\${release.dir}\SustainabilityOpen.QTO.Grasshopper.gha"/>
+  </target>
+
+  <target name="assemble-release" description="Assembles all release files in a single directory" depends="build,convert-release">
+    <copy todir="${build.dir}\${release.dir}\" flatten="true">
+      <fileset>
+        <include name="${build.dir}\SustainabilityOpen.dll"/>
+        <include name="${build.dir}\SustainabilityOpen.Grasshopper.dll"/>
+        <include name="${build.dir}\SustainabilityOpen.QTO.dll"/>
+      </fileset>
+    </copy>
     <copy todir="${build.dir}\${release.dir}\">
       <fileset>
         <include name="..\LICENSE"/>
@@ -62,7 +106,7 @@
   <target name="release" description="Builds the release" depends="zip-release">
   </target>
 
-  <target name="build-testsuite" description="Builds the test suite" depends="build">
+  <target name="build-testsuite-SustainabilityOpenTests" description="Builds the test suite for SustainabilityOpen.dll" depends="build">
     <csc target="library" output="${build.dir}\SustainabilityOpenTests.dll">
       <sources>
         <include name="..\src\tests\SustainabilityOpenTests\**\*.cs"/>
@@ -73,8 +117,33 @@
       </references>
     </csc>
   </target>
+ 
+  <target name="build-testsuite-SustainabilityOpenTests.Grasshopper" description="Builds the test suite for SustainabilityOpen.Grasshopper.dll" depends="build">
+    <csc target="library" output="${build.dir}\SustainabilityOpenTests.Grasshopper.dll">
+      <sources>
+        <include name="..\src\tests\SustainabilityOpenTests.Grasshopper\**\*.cs"/>
+      </sources>
+      <references>
+        <include name="${build.dir}\SustainabilityOpen.Grasshopper.dll"/>
+        <include name="${nunit.dir}\framework\nunit.framework.dll"/>
+      </references>
+    </csc>
+  </target>
 
-  <target name="test" description="Runs the test suite" depends="build-testsuite">
+  <target name="build-testsuite-SustainabilityOpenTests.QTO" description="Builds the test suite for SustainabilityOpen.QTO.dll" depends="build">
+    <csc target="library" output="${build.dir}\SustainabilityOpenTests.QTO.dll">
+      <sources>
+        <include name="..\src\tests\SustainabilityOpenTests.QTO\**\*.cs"/>
+      </sources>
+      <references>
+        <include name="${build.dir}\SustainabilityOpen.QTO.dll"/>
+        <include name="${nunit.dir}\framework\nunit.framework.dll"/>
+      </references>
+    </csc>
+  </target>
+
+
+  <target name="test" description="Runs the test suite" depends="build-testsuite-SustainabilityOpenTests,build-testsuite-SustainabilityOpenTests.Grasshopper,build-testsuite-SustainabilityOpenTests.QTO">
     <copy todir="${build.dir}">
       <fileset>
         <include name="${nunit.dir}\framework\nunit.framework.dll"/>
@@ -82,7 +151,7 @@
     </copy>
     <exec workingdir="${build.dir}"
           program="${nunit.dir}\nunit-console.exe">
-      <arg value="SustainabilityOpenTests.dll" />
+      <arg line="SustainabilityOpenTests.dll SustainabilityOpenTests.Grasshopper.dll SustainabilityOpenTests.QTO.dll" />
     </exec>
   </target>
 </project>
