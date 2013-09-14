@@ -26,6 +26,8 @@ namespace SustainabilityOpen.Framework.Design
     /// </summary>
     public class SODesignAlternative : SOBaseNamed
     {
+        private List<SOComponent> m_Components;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -33,6 +35,15 @@ namespace SustainabilityOpen.Framework.Design
         public SODesignAlternative(string name)
             : base(name)
         {
+            this.ReInit();
+        }
+
+        /// <summary>
+        /// Reinitialises the design alternative
+        /// </summary>
+        public void ReInit()
+        {
+            this.m_Components = new List<SOComponent>();
         }
 
         /// <summary>
@@ -42,7 +53,8 @@ namespace SustainabilityOpen.Framework.Design
         {
             get
             {
-                return null;
+                if (this.m_Components == null) { this.ReInit(); }
+                return this.m_Components.ToArray();
             }
         }
     }
