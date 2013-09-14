@@ -37,6 +37,7 @@ namespace SustainabilityOpen.Framework
         private static object m_SyncRoot = new Object();
         private List<SOParametricComponent> m_Entities;
         private ControllerState m_State;
+        private SODesign m_Design;
 
         /// <summary>
         /// Constructor
@@ -53,6 +54,15 @@ namespace SustainabilityOpen.Framework
         {
             if (this.m_Entities == null) { this.m_Entities = new List<SOParametricComponent>(); }
             this.m_State = ControllerState.unsolved;
+            this.ReInitDesign();
+        }
+
+        /// <summary>
+        /// Reinitialise the design 
+        /// </summary>
+        public void ReInitDesign() 
+        {
+            this.m_Design = new SODesign("default");
         }
 
         /// <summary>
@@ -138,7 +148,8 @@ namespace SustainabilityOpen.Framework
         {
             get
             {
-                return null;
+                if (this.m_Design == null) { this.ReInitDesign(); }
+                return this.m_Design;
             }
         }
 
