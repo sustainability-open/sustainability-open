@@ -13,6 +13,7 @@
 ///    limitations under the License.
 /// 
 
+using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,5 +76,17 @@ namespace SustainabilityOpen.Framework
                 return designers.ToArray();
             }
         }
+
+        /// <summary>
+        /// Returns the current design alternative for the designer to use
+        /// </summary>
+        public SODesignAlternative CurrentDesignAlternative
+        {
+            get
+            {
+                return SOController.Instance.Design.CurrentAlternative;
+            }
+        }
+
     }
 }

@@ -38,13 +38,15 @@ namespace SustainabilityOpen.QTO
 
             this.m_TextualOutput = "sustainability-open v" + SOFramework.VERSION + "\n\n";
             this.m_MaterialQuantities.Clear();
-            foreach (SODesigner designer in this.Designers)
+            
+            // TODO note that this actually should be a flattened list
+            foreach (SOComponent component in this.CurrentDesignAlternative.Components)
             {
-                foreach (SOPhysicalObject obj in designer.PhysicalObjects)
+                foreach (SOPhysicalObject obj in component.Parts)
                 {
                     this.m_TextualOutput += "Physical object: " + obj.Name + "\n";
                     SOMaterialQuantity quantity = obj.MaterialQuantity;
-                    
+
                     this.m_TextualOutput += "- " + quantity.Material.Name + ": " + quantity.Quantity.ToString("    0.00") + " " + quantity.Unit + "\n";
                     bool exists = false;
                     foreach (SOMaterialQuantity totalquantity in this.m_MaterialQuantities)
@@ -61,9 +63,10 @@ namespace SustainabilityOpen.QTO
                     {
                         this.m_MaterialQuantities.Add(new SOMaterialQuantity(quantity.Material, quantity.Quantity, quantity.Unit));
                     }
-                    
+
                 }
             }
+            
 
             this.m_TextualOutput += "\nTotals\n";
             foreach (SOMaterialQuantity quantity in this.m_MaterialQuantities)

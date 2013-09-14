@@ -17,6 +17,7 @@
 
 /// Note the inclusion of the framework in the reference
 using SustainabilityOpen.Framework;
+using SustainabilityOpen.Framework.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,9 +48,12 @@ namespace SimpleComponentsExample
             // It is important that you run the base designer
             base.RunDesigner();
 
-            // Adding two beams with the designer
-            this.AddObject(new Beam_HE200A());
-            this.AddObject(new Beam_HE200A());
+            // Adding a structure and two beams with the designer
+            SOComponent structure = new SOComponent("structure");
+
+            this.CurrentDesignAlternative.AddComponent(structure);
+            structure.AddPart(new Beam_HE200A());
+            structure.AddPart(new Beam_HE200A());
         }
     }
 }

@@ -132,6 +132,10 @@ namespace SustainabilityOpen.Grasshopper
             {
                 if (m_Instance.m_Controller != null)
                 {
+                    if (m_Instance.m_Controller.State != SOController.ControllerState.new_solution)
+                    {
+                        e.Document.ExpireSolution();
+                    }
                     m_Instance.m_Controller.SetState(SOController.ControllerState.new_solution);
                 }
             }

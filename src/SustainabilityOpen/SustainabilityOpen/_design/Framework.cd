@@ -10,12 +10,9 @@
   <Class Name="SustainabilityOpen.Framework.SODesigner">
     <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAAAAAAABAAAAACAAAAQAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Framework\SODesigner.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="PhysicalObjects" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOAnalysis">
     <Position X="3.25" Y="1.25" Width="1.5" />

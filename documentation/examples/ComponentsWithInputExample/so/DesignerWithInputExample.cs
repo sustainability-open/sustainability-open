@@ -52,9 +52,12 @@ namespace ComponentsWithInputExample
             // It is important that you run the base designer
             base.RunDesigner();
 
+            SOComponent component = new SOComponent("structure");
+            this.CurrentDesignAlternative.AddComponent(component);
+
             for (int i = 0; i < this.m_NumberOfBeams; i++)
             {
-                this.AddObject(new Beam_HE300A());
+                component.AddPart(new Beam_HE300A());
             }
         }
 
