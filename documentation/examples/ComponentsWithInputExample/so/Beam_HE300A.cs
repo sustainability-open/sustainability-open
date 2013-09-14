@@ -28,13 +28,13 @@ using System.Text;
 namespace ComponentsWithInputExample
 {
     /// <summary>
-    /// Class overrides the SOPhysicalObject class
+    /// Class overrides the SOPart class
     /// </summary>
-    public class Beam_HE300A : SOPhysicalObject
+    public class Beam_HE300A : SOPart
     {
         /// <summary>
         /// Constructor
-        /// Note the name of the physical object you will need to pass to the base class.
+        /// Note the name of the part you will need to pass to the base class.
         /// Also note the material quantity of the beam of 2 m3 of the material steel.
         /// </summary>
         public Beam_HE300A()
