@@ -61,6 +61,7 @@ namespace SustainabilityOpen.Framework.Design
         /// </summary>
         public void ClearComponents()
         {
+            this.ReInit();
         }
 
         /// <summary>
