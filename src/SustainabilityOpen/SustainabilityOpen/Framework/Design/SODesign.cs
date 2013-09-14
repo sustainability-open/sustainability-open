@@ -49,6 +49,14 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Adds an alternative to the design
+        /// </summary>
+        /// <param name="alternative">Alternative to add</param>
+        public void AddAlternative(SODesignAlternative alternative)
+        {
+        }
+
+        /// <summary>
         /// Clears the design
         /// </summary>
         public void ClearDesign()
