@@ -85,7 +85,7 @@ namespace SustainabilityOpen.Framework
         {
             get
             {
-                return null;
+                return SOController.Instance.Design.CurrentAlternative;
             }
         }
     }
