@@ -42,29 +42,26 @@ namespace SustainabilityOpen.QTO
             {
                 foreach (SOPhysicalObject obj in designer.PhysicalObjects)
                 {
-                    if (obj.ContainsMaterialSpecifications)
+                    this.m_TextualOutput += "Physical object: " + obj.Name + "\n";
+                    SOMaterialQuantity quantity = obj.MaterialQuantity;
+                    
+                    this.m_TextualOutput += "- " + quantity.Material.Name + ": " + quantity.Quantity.ToString("    0.00") + " " + quantity.Unit + "\n";
+                    bool exists = false;
+                    foreach (SOMaterialQuantity totalquantity in this.m_MaterialQuantities)
                     {
-                        this.m_TextualOutput += "Physical object: " + obj.Name + "\n";
-                        foreach (SOMaterialQuantity quantity in obj.MaterialQuantities)
+                        if ((totalquantity.Material.Equals(quantity.Material)) ||
+                            (totalquantity.Material.Name.Equals(quantity.Material.Name)))
                         {
-                            this.m_TextualOutput += "- " + quantity.Material.Name + ": " + quantity.Quantity.ToString("    0.00") + " " + quantity.Unit + "\n";
-                            bool exists = false;
-                            foreach (SOMaterialQuantity totalquantity in this.m_MaterialQuantities)
-                            {
-                                if ((totalquantity.Material.Equals(quantity.Material)) ||
-                                    (totalquantity.Material.Name.Equals(quantity.Material.Name)))
-                                {
-                                    totalquantity.Quantity += quantity.Quantity;
-                                    exists = true;
-                                    break;
-                                }
-                            }
-                            if (!exists)
-                            {
-                                this.m_MaterialQuantities.Add(new SOMaterialQuantity(quantity.Material, quantity.Quantity, quantity.Unit));
-                            }
+                            totalquantity.Quantity += quantity.Quantity;
+                            exists = true;
+                            break;
                         }
                     }
+                    if (!exists)
+                    {
+                        this.m_MaterialQuantities.Add(new SOMaterialQuantity(quantity.Material, quantity.Quantity, quantity.Unit));
+                    }
+                    
                 }
             }
 

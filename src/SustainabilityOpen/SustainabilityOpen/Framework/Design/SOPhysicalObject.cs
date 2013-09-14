@@ -26,42 +26,24 @@ namespace SustainabilityOpen.Framework.Design
     public abstract class SOPhysicalObject : SOBaseNamed
     {
         // Properties
-        private List<SOMaterialQuantity> m_MaterialQuantities;
+        private SOMaterialQuantity m_MaterialQuantity;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="name">Name of the object</param>
-        public SOPhysicalObject(string name) : base(name)
+        public SOPhysicalObject(string name, SOMaterial material, double quantity, string unit)
+            : base(name)
         {
-            this.m_MaterialQuantities = new List<SOMaterialQuantity>();
+            this.m_MaterialQuantity = new SOMaterialQuantity(material, quantity, unit);
         }
-
-        /// <summary>
-        /// Add a material quantity to the object
-        /// </summary>
-        /// <param name="material">Material definition</param>
-        /// <param name="quantity">Quantity of the material</param>
-        /// <param name="unit">Unit of the quantity</param>
-        public void AddMaterialQuantity(SOMaterial material, double quantity, string unit)
-        {
-            this.m_MaterialQuantities.Add(new SOMaterialQuantity(material, quantity, unit));
-        }
-        
-        /// <summary>
-        /// Returns if the object contains material specifications or not
-        /// </summary>
-        public bool ContainsMaterialSpecifications
-        {
-            get { return this.m_MaterialQuantities.Count > 0; }
-        }
-
+     
         /// <summary>
         /// Returns the material quantities
         /// </summary>
-        public SOMaterialQuantity[] MaterialQuantities
+        public SOMaterialQuantity MaterialQuantity
         {
-            get { return this.m_MaterialQuantities.ToArray(); }
+            get { return this.m_MaterialQuantity; }
         }
     }
 }

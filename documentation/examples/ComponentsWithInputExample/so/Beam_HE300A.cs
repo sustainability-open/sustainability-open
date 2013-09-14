@@ -35,12 +35,11 @@ namespace ComponentsWithInputExample
         /// <summary>
         /// Constructor
         /// Note the name of the physical object you will need to pass to the base class.
+        /// Also note the material quantity of the beam of 2 m3 of the material steel.
         /// </summary>
         public Beam_HE300A()
-            : base("HE300A")
+            : base("HE300A", new SOMaterial("steel"), 2, "m3")
         {
-            // Adding a material quantity to the beam of 2 m3 of the material steel.
-            this.AddMaterialQuantity(new SOMaterial("steel"), 2, "m3");
         }
 
     }

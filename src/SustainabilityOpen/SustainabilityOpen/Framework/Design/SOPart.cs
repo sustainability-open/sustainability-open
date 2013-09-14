@@ -23,8 +23,8 @@ namespace SustainabilityOpen.Framework.Design
 {
     public class SOPart : SOPhysicalObject
     {
-        public SOPart(string name)
-            : base(name)
+        public SOPart(string name, SOMaterial material, double quantity, string unit)
+            : base(name, material, quantity, unit)
         {
         }
     }
