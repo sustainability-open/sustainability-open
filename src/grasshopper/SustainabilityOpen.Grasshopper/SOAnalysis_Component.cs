@@ -13,6 +13,8 @@
 ///    limitations under the License.
 /// 
 
+#define DEBUG
+
 using Grasshopper.Kernel;
 using SustainabilityOpen.Framework;
 using System;
@@ -46,6 +48,10 @@ namespace SustainabilityOpen.Grasshopper
  
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+#if DEBUG
+            Rhino.RhinoApp.WriteLine("Analysis " + this.Name + " is solving");
+#endif
+
             // check dependencies
             if (this.m_Analysis == null) { return; }
 

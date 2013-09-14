@@ -23,6 +23,9 @@ using System.Text;
 
 namespace SustainabilityOpen.Grasshopper
 {
+    /// <summary>
+    /// Grasshopper controller
+    /// </summary>
     public sealed class SOGrasshopperController
     {
         private static volatile SOGrasshopperController m_Instance;

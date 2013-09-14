@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SustainabilityOpen.Framework.SOBase">
-    <Position X="3.75" Y="1" Width="1.5" />
+  <Class Name="SustainabilityOpen.Framework.SOBaseNamed">
+    <Position X="3.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\SOBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SODesigner">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAAAAAAABAAAAACAAAAQAAAAAEA=</HashCode>
       <FileName>Framework\SODesigner.cs</FileName>
@@ -18,9 +18,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOAnalysis">
-    <Position X="3.25" Y="3.75" Width="1.5" />
+    <Position X="3.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAABAAAAACAABEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAABAAAAACAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\SOAnalysis.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -28,9 +28,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOAssessment">
-    <Position X="5.75" Y="3.75" Width="1.5" />
+    <Position X="6" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAQAAAAACAEAAAAAgAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAEAAAAAgAAA=</HashCode>
       <FileName>Framework\SOAssessment.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -40,24 +40,21 @@
   <Class Name="SustainabilityOpen.Framework.Design.SOPhysicalObject">
     <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAIAIAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAIAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOPhysicalObject.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="MaterialQuantities" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOMaterial" Collapsed="true">
     <Position X="6.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\Design\SOMaterial.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOMaterialQuantity">
     <Position X="3.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAgAAAQAA=</HashCode>
+      <HashCode>AEAABAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAgAAAQAA=</HashCode>
       <FileName>Framework\Design\SOMaterialQuantity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

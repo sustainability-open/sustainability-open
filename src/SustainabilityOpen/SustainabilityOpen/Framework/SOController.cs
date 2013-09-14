@@ -24,6 +24,12 @@ namespace SustainabilityOpen.Framework
     /// </summary>
     public sealed class SOController
     {
+        private enum State
+        {
+            new_solution,
+            first_designer_passed
+        }
+        
         private static volatile SOController m_Instance;
         private static object m_SyncRoot = new Object();
         private List<SOParametricComponent> m_Entities;
