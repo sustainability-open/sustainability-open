@@ -102,6 +102,8 @@ namespace SustainabilityOpen.Framework.Design
         /// </summary>
         public void Clear()
         {
+            this.ClearSubComponents();
+            this.ClearParts();
         }
 
         /// <summary>
