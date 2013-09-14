@@ -77,6 +77,8 @@ namespace SustainabilityOpen.Framework.Design
         /// <param name="part">Part to add to this component</param>
         public void AddPart(SOPart part)
         {
+            if (this.m_Parts == null) { this.ReInitParts(); }
+            this.m_Parts.Add(part);
         }
 
         /// <summary>
