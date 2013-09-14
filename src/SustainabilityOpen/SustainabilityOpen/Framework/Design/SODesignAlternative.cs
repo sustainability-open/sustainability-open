@@ -46,8 +46,14 @@ namespace SustainabilityOpen.Framework.Design
             this.m_Components = new List<SOComponent>();
         }
 
+        /// <summary>
+        /// Adds a component to the design alternative
+        /// </summary>
+        /// <param name="component">Component to add</param>
         public void AddComponent(SOComponent component)
         {
+            if (this.m_Components == null) { this.ReInit(); }
+            this.m_Components.Add(component);
         }
 
         /// <summary>
