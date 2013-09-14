@@ -36,5 +36,12 @@ namespace SustainabilityOpen.Framework.Design
             }
         }
 
+        public SOPart[] Parts
+        {
+            get
+            {
+                return null;
+            }
+        }
     }
 }
