@@ -37,6 +37,12 @@ namespace SustainabilityOpen.Grasshopper
             this.m_Designer = designer;
             SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
         }
+        protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
+        {
+            SODesigner_GHParam param1 = new SODesigner_GHParam();
+            param1.Optional = true;
+            pManager.AddParameter(param1, "d", "d", "Designer input", GH_ParamAccess.list);
+        }
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
             pManager.RegisterParam(new SODesigner_GHParam(), "d", "d", "Designer output", GH_ParamAccess.item);
@@ -49,6 +55,14 @@ namespace SustainabilityOpen.Grasshopper
             
             // check if the controller is online
             SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
+
+            List<SODesigner_GHData> designerList = new List<SODesigner_GHData>();
+            DA.GetDataList<SODesigner_GHData>(0, designerList);
+            this.m_Designer.ClearDesigners();
+            foreach (SODesigner_GHData data in designerList)
+            {
+                this.m_Designer.AddDesigner(data.Value);
+            }
             
             if (this.m_Designer == null) { return; }
             try
@@ -61,8 +75,8 @@ namespace SustainabilityOpen.Grasshopper
             }
 
             // return the designer data
-            SODesigner_GHData data = new SODesigner_GHData(this.m_Designer);
-            DA.SetData(0, data);
+            SODesigner_GHData data1 = new SODesigner_GHData(this.m_Designer);
+            DA.SetData(0, data1);
 #if DEBUG
             Rhino.RhinoApp.WriteLine("> Controller state: " + SOController.Instance.State.ToString());
 #endif

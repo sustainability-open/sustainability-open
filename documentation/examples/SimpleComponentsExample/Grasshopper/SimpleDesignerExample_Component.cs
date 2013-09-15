@@ -43,7 +43,7 @@ namespace SimpleComponentsExample
         /// <param name="pManager">Grasshopper's input parameter manager</param>
         protected override void RegisterInputParams(Grasshopper.Kernel.GH_Component.GH_InputParamManager pManager)
         {
-            // does nothing
+            base.RegisterInputParams(pManager);
         }
         /// <summary>
         /// You will need to override this method to register the outputs for the designer.

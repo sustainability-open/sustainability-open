@@ -44,6 +44,7 @@ namespace ComponentsWithInputExample.Grasshopper
         /// <param name="pManager">Grasshopper's input parameter manager</param>
         protected override void RegisterInputParams(GH.Kernel.GH_Component.GH_InputParamManager pManager)
         {
+            base.RegisterInputParams(pManager);
             pManager.AddIntegerParameter("n", "n", "number of beams", GH.Kernel.GH_ParamAccess.item);
         }
         /// <summary>
@@ -63,7 +64,7 @@ namespace ComponentsWithInputExample.Grasshopper
         {
             // first set the properties in the SODesigner
             int n = 0;
-            if (DA.GetData<int>(0, ref n))
+            if (DA.GetData<int>(1, ref n))
             {
                 ((DesignerWithInputExample)this.Designer).NumberOfBeams = n;
             }

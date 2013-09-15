@@ -35,6 +35,24 @@ namespace SustainabilityOpen.Framework
         }
 
         /// <summary>
+        /// Clears the attached designers from this designer
+        /// </summary>
+        public void ClearDesigners()
+        {
+            this.ClearParentsOfType(typeof(SODesigner));
+        }
+
+        /// <summary>
+        /// Attaches a designer to this designer
+        /// </summary>
+        /// <param name="designer">Designer to add</param>
+        public void AddDesigner(SODesigner designer)
+        {
+            this.AddParent(designer);
+        }
+
+
+        /// <summary>
         /// Runs the designer. Override this method to make the designer do some work.
         /// </summary>
         public virtual void RunDesigner()
