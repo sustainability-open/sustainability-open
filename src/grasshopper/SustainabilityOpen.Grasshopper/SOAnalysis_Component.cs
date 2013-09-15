@@ -41,8 +41,8 @@ namespace SustainabilityOpen.Grasshopper
             IGH_Param param1 = new SODesigner_GHParam();
             pManager.AddParameter(param1, "Designers", "d", "Register a designer output (or more than one) as input", GH_ParamAccess.list);
 
-            //IGH_Param param2 = new SOAnalysis_GHParam();
-            //pManager.AddParameter(param2, "Analysis", "a", "Register an analysis output (or more than one) as input", GH_ParamAccess.list);
+            IGH_Param param2 = new SOAnalysis_GHParam();
+            pManager.AddParameter(param2, "Analysis", "a", "Register an analysis output (or more than one) as input", GH_ParamAccess.list);
         }
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
@@ -67,6 +67,14 @@ namespace SustainabilityOpen.Grasshopper
             foreach (SODesigner_GHData data in designerList)
             {
                 this.m_Analysis.AddDesigner(data.Value);
+            }
+
+            List<SOAnalysis_GHData> analysisList = new List<SOAnalysis_GHData>();
+            DA.GetDataList<SOAnalysis_GHData>(1, analysisList);
+            this.m_Analysis.ClearAnalyses();
+            foreach (SOAnalysis_GHData data in analysisList)
+            {
+                this.m_Analysis.AddAnalysis(data.Value);
             }
 
 
