@@ -13,7 +13,7 @@
 ///    limitations under the License.
 /// 
 
-#define DEBUG
+#undef DEBUG
 
 using Grasshopper.Kernel;
 using SustainabilityOpen.Framework;

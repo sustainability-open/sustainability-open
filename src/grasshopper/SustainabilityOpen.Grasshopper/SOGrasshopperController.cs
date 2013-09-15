@@ -13,7 +13,7 @@
 ///    limitations under the License.
 /// 
 
-#define DEBUG
+#undef DEBUG
 
 using GH = Grasshopper;
 using SustainabilityOpen.Framework;
@@ -69,7 +69,9 @@ namespace SustainabilityOpen.Grasshopper
                     ghDocument.ObjectsAdded += new GH.Kernel.GH_Document.ObjectsAddedEventHandler(ghDocument_ObjectsAdded);
                     ghDocument.ObjectsDeleted += new GH.Kernel.GH_Document.ObjectsDeletedEventHandler(ghDocument_ObjectsDeleted);
                     m_Instance.m_Registered = true;
+#if DEBUG
                     Rhino.RhinoApp.WriteLine("Events registered");
+#endif
                 }
             }
             return m_Instance;
