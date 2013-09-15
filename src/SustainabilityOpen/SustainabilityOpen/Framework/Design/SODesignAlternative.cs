@@ -83,7 +83,13 @@ namespace SustainabilityOpen.Framework.Design
         {
             get
             {
-                return null;
+                if (this.m_Components == null) { this.ReInit(); }
+                List<SOComponent> flattenedList = new List<SOComponent>();
+                foreach (SOComponent component in this.m_Components)
+                {
+                    flattenedList.Add(component);
+                }
+                return flattenedList.ToArray();
             }
         }
     }
