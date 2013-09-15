@@ -78,6 +78,17 @@ namespace SustainabilityOpen.Framework
         }
 
         /// <summary>
+        /// Returns the attached analyses
+        /// </summary>
+        public SOAnalysis[] Analyses
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Returns the current design alternative for the designer to use
         /// </summary>
         public SODesignAlternative CurrentDesignAlternative
