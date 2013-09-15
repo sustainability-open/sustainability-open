@@ -52,6 +52,13 @@ namespace SustainabilityOpen.Framework
         }
 
         /// <summary>
+        /// Clears the attached analysis from this analysis
+        /// </summary>
+        public void ClearAnalyses()
+        {
+        }
+
+        /// <summary>
         /// Attaches an analysis to this analysis
         /// </summary>
         /// <param name="analysis">Analysis to add</param>
