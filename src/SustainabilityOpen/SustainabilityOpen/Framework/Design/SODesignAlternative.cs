@@ -88,6 +88,7 @@ namespace SustainabilityOpen.Framework.Design
                 foreach (SOComponent component in this.m_Components)
                 {
                     flattenedList.Add(component);
+                    component.PassOnFlattenedSubComponents(ref flattenedList);
                 }
                 return flattenedList.ToArray();
             }
