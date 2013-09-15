@@ -65,7 +65,7 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
-        /// Components part of this design
+        /// Returns components that are part of this design
         /// </summary>
         public SOComponent[] Components
         {
@@ -73,6 +73,17 @@ namespace SustainabilityOpen.Framework.Design
             {
                 if (this.m_Components == null) { this.ReInit(); }
                 return this.m_Components.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Returns a flattened list of the entire component tree
+        /// </summary>
+        public SOComponent[] FlattenedComponents
+        {
+            get
+            {
+                return null;
             }
         }
     }
