@@ -131,7 +131,7 @@ namespace SustainabilityOpen.Framework.Design
             {
                 foreach (SOComponent component in this.m_Components)
                 {
-                    component.PassOnFlattenedSubComponents(ref listToAddTo);
+                    component.PassOnFlattenedLeafSubComponents(ref listToAddTo);
                 }
             }
             else

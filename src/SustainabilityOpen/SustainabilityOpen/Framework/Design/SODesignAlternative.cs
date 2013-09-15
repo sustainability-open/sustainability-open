@@ -105,7 +105,7 @@ namespace SustainabilityOpen.Framework.Design
                 List<SOComponent> flattenedList = new List<SOComponent>();
                 foreach (SOComponent component in this.m_Components)
                 {
-                    component.PassOnFlattenedSubComponents(ref flattenedList);
+                    component.PassOnFlattenedLeafSubComponents(ref flattenedList);
                 }
                 return flattenedList.ToArray();
             }
