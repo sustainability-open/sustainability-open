@@ -38,8 +38,11 @@ namespace SustainabilityOpen.Grasshopper
         }
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            IGH_Param param = new SODesigner_GHParam();
-            pManager.AddParameter(param, "Designers", "d", "Register a designer (or more)", GH_ParamAccess.list);
+            IGH_Param param1 = new SODesigner_GHParam();
+            pManager.AddParameter(param1, "Designers", "d", "Register a designer output (or more than one) as input", GH_ParamAccess.list);
+
+            //IGH_Param param2 = new SOAnalysis_GHParam();
+            //pManager.AddParameter(param2, "Analysis", "a", "Register an analysis output (or more than one) as input", GH_ParamAccess.list);
         }
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
