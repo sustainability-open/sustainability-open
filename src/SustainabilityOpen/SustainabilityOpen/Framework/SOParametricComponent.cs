@@ -58,6 +58,19 @@ namespace SustainabilityOpen.Framework
             if (this.m_Parents == null) { this.ReInit(); }
             this.m_Parents.Clear();
         }
+        public void ClearParentsOfType(Type typeToClear)
+        {
+            if (this.m_Parents == null) { this.ReInit(); }
+            List<SOParametricComponent> temp = new List<SOParametricComponent>();
+            foreach (SOParametricComponent component in this.m_Parents)
+            {
+                if ((!component.GetType().IsSubclassOf(typeToClear)) && (!(component.GetType() == typeToClear)))
+                {
+                    temp.Add(component);
+                }
+            }
+            this.m_Parents = temp;
+        }
 
         public void ClearChildren()
         {

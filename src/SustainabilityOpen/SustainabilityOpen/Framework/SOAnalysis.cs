@@ -39,7 +39,7 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public void ClearDesigners()
         {
-            this.ClearParents();
+            this.ClearParentsOfType(typeof(SODesigner));
         }
 
         /// <summary>
@@ -56,6 +56,7 @@ namespace SustainabilityOpen.Framework
         /// </summary>
         public void ClearAnalyses()
         {
+            this.ClearParentsOfType(typeof(SOAnalysis));
         }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace SustainabilityOpen.Framework
         /// <param name="analysis">Analysis to add</param>
         public void AddAnalysis(SOAnalysis analysis)
         {
+            this.AddParent(analysis);
         }
 
         /// <summary>
