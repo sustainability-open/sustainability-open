@@ -22,6 +22,6 @@ namespace SustainabilityOpen.Framework
 {
     public class SOFramework
     {
-        public const string VERSION = "0.0.2-alpha";
+        public const string VERSION = "0.0.2";
     }
 }
