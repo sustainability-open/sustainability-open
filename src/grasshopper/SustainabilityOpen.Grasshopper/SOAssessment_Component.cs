@@ -38,7 +38,22 @@ namespace SustainabilityOpen.Grasshopper
         }
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddParameter(new SOAnalysis_GHParam(), "Analyses", "a", "Register an analysis (or more)", GH_ParamAccess.list);
+            SODesigner_GHParam param1 = new SODesigner_GHParam();
+            param1.Optional = true;
+            pManager.AddParameter(param1, "Designers", "d", "Register a designer (or more than one) as input", GH_ParamAccess.list);
+
+            SOAnalysis_GHParam param2 = new SOAnalysis_GHParam();
+            param2.Optional = true;
+            pManager.AddParameter(param2, "Analyses", "a", "Register an analysis (or more than one) as input", GH_ParamAccess.list);
+
+            SOAssessment_GHParam param3 = new SOAssessment_GHParam();
+            param3.Optional = true;
+            pManager.AddParameter(param3, "Assessments", "as", "Register an assessment (or more than one) as input", GH_ParamAccess.list);
+        }
+        protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
+        {
+            SOAssessment_GHParam param = new SOAssessment_GHParam();
+            pManager.AddParameter(param, "Assessments", "as", "Assessment output", GH_ParamAccess.item);
         }
  
         protected override void SolveInstance(IGH_DataAccess DA)
@@ -53,12 +68,28 @@ namespace SustainabilityOpen.Grasshopper
             // check if the controller is online
             SOGrasshopperController con = SOGrasshopperController.GetInstance(OnPingDocument());
 
+            List<SODesigner_GHData> designersList = new List<SODesigner_GHData>();
+            DA.GetDataList<SODesigner_GHData>(0, designersList);
+            this.m_Assessment.ClearDesigners();
+            foreach (SODesigner_GHData data in designersList)
+            {
+                this.m_Assessment.AddDesigner(data.Value);
+            }
+
             List<SOAnalysis_GHData> analysisList = new List<SOAnalysis_GHData>();
-            DA.GetDataList<SOAnalysis_GHData>(0, analysisList);
+            DA.GetDataList<SOAnalysis_GHData>(1, analysisList);
             this.m_Assessment.ClearAnalysis();
             foreach (SOAnalysis_GHData data in analysisList)
             {
                 this.m_Assessment.AddAnalysis(data.Value);
+            }
+
+            List<SOAssessment_GHData> assessmentsList = new List<SOAssessment_GHData>();
+            DA.GetDataList<SOAssessment_GHData>(2, assessmentsList);
+            this.m_Assessment.ClearAssessments();
+            foreach (SOAssessment_GHData data in assessmentsList)
+            {
+                this.m_Assessment.AddAssessment(data.Value);
             }
 
             // run the assessment
@@ -70,6 +101,9 @@ namespace SustainabilityOpen.Grasshopper
             {
                 return;
             }
+
+            SOAssessment_GHData assessment = new SOAssessment_GHData(this.m_Assessment);
+            DA.SetData(0, assessment);
         }
         public SOAssessment Assessment
         {

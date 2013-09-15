@@ -32,12 +32,32 @@ namespace SustainabilityOpen.Framework
 
         public void ClearAnalysis()
         {
-            this.ClearParents();
+            this.ClearParentsOfType(typeof(SOAnalysis));
         }
 
         public void AddAnalysis(SOAnalysis analysis)
         {
             this.AddParent(analysis);
+        }
+
+        public void ClearAssessments()
+        {
+            this.ClearParentsOfType(typeof(SOAssessment));
+        }
+
+        public void AddAssessment(SOAssessment assessment)
+        {
+            this.AddParent(assessment);
+        }
+
+        public void ClearDesigners()
+        {
+            this.ClearParentsOfType(typeof(SODesigner));
+        }
+
+        public void AddDesigner(SODesigner designer)
+        {
+            this.AddParent(designer);
         }
 
         /// <summary>
@@ -60,6 +80,38 @@ namespace SustainabilityOpen.Framework
                     }
                 }
                 return analyses.ToArray();
+            }
+        }
+
+        public SOAssessment[] Assessments
+        {
+            get
+            {
+                List<SOAssessment> assessments = new List<SOAssessment>();
+                foreach (SOParametricComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SOAssessment)) || (component.GetType() == typeof(SOAssessment)))
+                    {
+                        assessments.Add((SOAssessment)component);
+                    }
+                }
+                return assessments.ToArray();
+            }
+        }
+
+        public SODesigner[] Designers
+        {
+            get
+            {
+                List<SODesigner> designers = new List<SODesigner>();
+                foreach (SOParametricComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SODesigner)) || (component.GetType() == typeof(SODesigner)))
+                    {
+                        designers.Add((SODesigner)component);
+                    }
+                }
+                return designers.ToArray();
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SustainabilityOpen.Framework.SOBaseNamed">
-    <Position X="3.25" Y="4" Width="1.5" />
+    <Position X="3.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Framework\SOBase.cs</FileName>
@@ -17,21 +17,24 @@
   <Class Name="SustainabilityOpen.Framework.SOAnalysis">
     <Position X="3.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAABAAAAACAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAABAAAAACAAAEAAQAAAAAKAEAAAAAAAAA=</HashCode>
       <FileName>Framework\SOAnalysis.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Designers" />
+      <Property Name="Analyses" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOAssessment">
     <Position X="6" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAEAAAAAgAAA=</HashCode>
+      <HashCode>AAAAgAAACAAABAAAAAAAAAEAAQAAAIAOAEAAAAAgAAA=</HashCode>
       <FileName>Framework\SOAssessment.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Analyses" />
+      <Property Name="Designers" />
+      <Property Name="Assessments" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOPhysicalObject">

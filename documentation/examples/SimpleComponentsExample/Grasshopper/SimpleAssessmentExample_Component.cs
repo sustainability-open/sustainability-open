@@ -52,6 +52,8 @@ namespace SimpleComponentsExample
         /// <param name="pManager">Grasshopper's output parameter manager</param>
         protected override void RegisterOutputParams(Grasshopper.Kernel.GH_Component.GH_OutputParamManager pManager)
         {
+            base.RegisterOutputParams(pManager);
+
             pManager.Register_DoubleParam("quantity", "q", "Material Quantity");
             pManager.Register_StringParam("textoutput", "t", "Textual Output");
         }
@@ -64,8 +66,8 @@ namespace SimpleComponentsExample
             /// Note that you will need to call the SolveInstance method of the base class to process the default parameters and connect them to the framework.
             base.SolveInstance(DA);           
             
-            DA.SetData(0, ((SimpleAssessmentExample)this.Assessment).EmbodiedEnergy);
-            DA.SetData(1, "Embodied energy: " + ((SimpleAssessmentExample)this.Assessment).EmbodiedEnergy.ToString("0.00"));
+            DA.SetData(1, ((SimpleAssessmentExample)this.Assessment).EmbodiedEnergy);
+            DA.SetData(2, "Embodied energy: " + ((SimpleAssessmentExample)this.Assessment).EmbodiedEnergy.ToString("0.00"));
         }
         /// <summary>
         /// You will need to override this Guid with an unique identifier for each class.
