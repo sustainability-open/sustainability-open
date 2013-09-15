@@ -93,5 +93,16 @@ namespace SustainabilityOpen.Framework.Design
                 return flattenedList.ToArray();
             }
         }
+
+        /// <summary>
+        /// Returns a flattened list of the leafs of the component tree
+        /// </summary>
+        public SOComponent[] FlattenedLeafComponents
+        {
+            get
+            {
+                return null;
+            }
+        }
     }
 }
