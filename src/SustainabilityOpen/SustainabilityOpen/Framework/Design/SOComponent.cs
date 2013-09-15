@@ -107,6 +107,14 @@ namespace SustainabilityOpen.Framework.Design
         }
 
         /// <summary>
+        /// Passes on all subcomponents in a list
+        /// </summary>
+        /// <param name="listToAddTo">List to add the subcomponents to</param>
+        public void PassOnFlattenedSubComponents(ref List<SOComponent> listToAddTo)
+        {
+        }
+
+        /// <summary>
         /// Sub-components of the component
         /// </summary>
         public SOComponent[] SubComponents
