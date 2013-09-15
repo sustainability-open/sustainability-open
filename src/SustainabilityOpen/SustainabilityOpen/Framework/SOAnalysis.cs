@@ -45,10 +45,18 @@ namespace SustainabilityOpen.Framework
         /// <summary>
         /// Attaches a designer to this analysis
         /// </summary>
-        /// <param name="designer"></param>
+        /// <param name="designer">Designer to add</param>
         public void AddDesigner(SODesigner designer)
         {
             this.AddParent(designer);
+        }
+
+        /// <summary>
+        /// Attaches an analysis to this analysis
+        /// </summary>
+        /// <param name="analysis">Analysis to add</param>
+        public void AddAnalysis(SOAnalysis analysis)
+        {
         }
 
         /// <summary>
