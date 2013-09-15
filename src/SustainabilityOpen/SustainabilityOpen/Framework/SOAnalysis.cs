@@ -84,7 +84,15 @@ namespace SustainabilityOpen.Framework
         {
             get
             {
-                return null;
+                List<SOAnalysis> analyses = new List<SOAnalysis>();
+                foreach (SOParametricComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SODesigner)) || (component.GetType() == typeof(SOAnalysis)))
+                    {
+                        analyses.Add((SOAnalysis)component);
+                    }                    
+                }
+                return analyses.ToArray();
             }
         }
 
