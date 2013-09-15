@@ -39,8 +39,7 @@ namespace SustainabilityOpen.QTO
             this.m_TextualOutput = "sustainability-open v" + SOFramework.VERSION + "\n\n";
             this.m_MaterialQuantities.Clear();
             
-            // TODO note that this actually should be a flattened list
-            foreach (SOComponent component in this.CurrentDesignAlternative.Components)
+            foreach (SOComponent component in this.CurrentDesignAlternative.FlattenedLeafComponents)
             {
                 foreach (SOPhysicalObject obj in component.Parts)
                 {
