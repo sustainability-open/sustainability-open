@@ -74,9 +74,9 @@ namespace SustainabilityOpen.Framework
                 return SOController.Instance.Design.CurrentAlternative;
             }
         }
-        //public SODesigner[] Designers
-        //{
-        //    get { return null; }
-        //}
+        public SODesigner[] Designers
+        {
+            get { return null; }
+        }
     }
 }

@@ -30,12 +30,12 @@
   <Class Name="SustainabilityOpen.Framework.Design.SOComponent" Collapsed="true">
     <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAAQAAAAAAAAAABAAAAAACESAAAAQCQCAAABAAEA=</HashCode>
       <FileName>Framework\Design\SOComponent.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Property Name="Parts" />
       <Property Name="SubComponents" />
+      <Property Name="Parts" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SODesign" Collapsed="true">
@@ -44,7 +44,7 @@
       <Field Name="m_Alternatives" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAgBAAAAAAAAAAAAAAAAAAQAAIAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgBAAAAAAAAAAAAAAAAAAQQAIAAAIAAAAAAAgA=</HashCode>
       <FileName>Framework\Design\SODesign.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -54,7 +54,7 @@
   <Class Name="SustainabilityOpen.Framework.Design.SODesignAlternative" Collapsed="true">
     <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAASAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAYAIAAAAAAAAAEAASAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Framework\Design\SODesignAlternative.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -66,9 +66,8 @@
     <InheritanceLine Type="SustainabilityOpen.Framework.Design.SOPhysicalObject" ManuallyRouted="true" FixedToPoint="true">
       <Path>
         <Point X="4.5" Y="6.434" />
-        <Point X="4.5" Y="7.062" />
-        <Point X="7.5" Y="7.062" />
-        <Point X="7.5" Y="7.188" />
+        <Point X="4.5" Y="7.125" />
+        <Point X="7.5" Y="7.125" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>

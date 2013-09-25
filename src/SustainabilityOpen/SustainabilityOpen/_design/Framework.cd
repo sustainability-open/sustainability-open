@@ -10,7 +10,7 @@
   <Class Name="SustainabilityOpen.Framework.SODesigner">
     <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAACAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Framework\SODesigner.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -27,14 +27,27 @@
   </Class>
   <Class Name="SustainabilityOpen.Framework.SOAssessment">
     <Position X="6" Y="1.25" Width="1.5" />
+    <AssociationLine Name="Designers" Type="SustainabilityOpen.Framework.SODesigner" ManuallyRouted="true">
+      <Path>
+        <Point X="6" Y="4.052" />
+        <Point X="4.432" Y="4.052" />
+        <Point X="4.432" Y="4.365" />
+        <Point X="4.312" Y="4.365" Type="JumpStart" />
+        <Point X="4.145" Y="4.365" Type="JumpEnd" />
+        <Point X="3.865" Y="4.365" Type="JumpStart" />
+        <Point X="3.699" Y="4.365" Type="JumpEnd" />
+        <Point X="1.25" Y="4.365" />
+        <Point X="1.25" Y="3.511" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAgAAACAAABAAAAAAAAAEAAQAAAIAOAEAAAAAgAAA=</HashCode>
       <FileName>Framework\SOAssessment.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Analyses" />
-      <Property Name="Designers" />
       <Property Name="Assessments" />
+      <Property Name="Designers" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SustainabilityOpen.Framework.Design.SOPhysicalObject">
