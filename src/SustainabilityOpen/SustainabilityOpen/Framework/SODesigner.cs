@@ -76,7 +76,19 @@ namespace SustainabilityOpen.Framework
         }
         public SODesigner[] Designers
         {
-            get { return null; }
+            get
+            {
+                List<SODesigner> designers = new List<SODesigner>();
+                foreach (SOParametricComponent component in this.Parents)
+                {
+                    if (component.GetType().IsSubclassOf(typeof(SODesigner)) || (component.GetType() == typeof(SODesigner)))
+                    {
+                        designers.Add((SODesigner)component);
+                    }
+                }
+                return designers.ToArray();
+            }
+
         }
     }
 }
