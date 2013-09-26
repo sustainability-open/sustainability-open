@@ -52,12 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Grasshopper\ComponentWithVisualOutputExample_Component.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="so\Beam_HE400A.cs" />
+    <Compile Include="so\Beam_HE320A.cs" />
+    <Compile Include="so\BEAM_HE.cs" />
+    <Compile Include="so\SOPoint3d.cs" />
+    <Compile Include="so\DesignerWithVisualOutputExample.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Grasshopper\" />
-    <Folder Include="so\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\grasshopper\SustainabilityOpen.Grasshopper\SustainabilityOpen.Grasshopper.csproj">
       <Project>{F4893C26-BBDD-4A3E-8C89-D739C192CA8A}</Project>
