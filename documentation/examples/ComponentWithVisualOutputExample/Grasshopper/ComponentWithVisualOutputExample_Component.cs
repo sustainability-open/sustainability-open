@@ -52,8 +52,10 @@ namespace ComponentWithVisualOutputExample.Grasshopper
         {
             base.RegisterInputParams(pManager);
             pManager.AddPointParameter("p", "p", "Base point", GH.Kernel.GH_ParamAccess.item);
-            pManager.AddNumberParameter("s", "s", "Span", GH.Kernel.GH_ParamAccess.item, 1.0);
-            pManager.AddNumberParameter("h", "h", "Height", GH.Kernel.GH_ParamAccess.item, 10.0);
+            pManager.AddNumberParameter("s", "s", "Span", GH.Kernel.GH_ParamAccess.item, 10.0);
+            pManager.AddNumberParameter("h", "h", "Height", GH.Kernel.GH_ParamAccess.item, 1.0);
+            pManager.AddIntegerParameter("n", "n", "Number of frames", GH.Kernel.GH_ParamAccess.item, 1);
+            pManager.AddNumberParameter("sp", "sp", "Spacing", GH.Kernel.GH_ParamAccess.item, 1.0);
         }
         /// <summary>
         /// You will need to override this method to register the outputs for the designer.
@@ -63,6 +65,7 @@ namespace ComponentWithVisualOutputExample.Grasshopper
         {
             // Note that you will need to call the RegisterOutputParams method of the base class to register the default output parameters.
             base.RegisterOutputParams(pManager);
+            pManager.AddLineParameter("l", "l", "l", GH.Kernel.GH_ParamAccess.list);
         }
         /// <summary>
         /// You will need to override this method to solve the component.
@@ -72,8 +75,10 @@ namespace ComponentWithVisualOutputExample.Grasshopper
         {
             // Retrieve the data and pass it to the designer component
             Point3d point = new Point3d(0, 0, 0);
-            double span = 1.0;
-            double height = 10.0;
+            double span = 10.0;
+            double height = 1.0;
+            int n = 1;
+            double spacing = 1.0;
             if (DA.GetData<Point3d>(1, ref point))
             {
                 ((DesignerWithVisualOutputExample)this.Designer).basePoint = new SOPoint3d(
@@ -89,9 +94,28 @@ namespace ComponentWithVisualOutputExample.Grasshopper
             {
                 ((DesignerWithVisualOutputExample)this.Designer).Height = height;
             }
+            if (DA.GetData<int>(4, ref n))
+            {
+                ((DesignerWithVisualOutputExample)this.Designer).NumberOfFrames = n;
+            }
+            if (DA.GetData<double>(5, ref spacing))
+            {
+                ((DesignerWithVisualOutputExample)this.Designer).Spacing = spacing;
+            }
 
             /// Note that you will need to call the SolveInstance method of the base class to process the default parameters and connect them to the framework.
             base.SolveInstance(DA);
+
+            DesignerWithVisualOutputExample dsn = (DesignerWithVisualOutputExample)this.Designer;
+
+            List<Line> lines = new List<Line>();
+            for (int i = 0; i < dsn.NumberOfFrames; i++)
+            {
+                lines.Add(new Line(dsn.Points2[i].X, dsn.Points2[i].Y, dsn.Points2[i].Z, dsn.Points4[i].X, dsn.Points4[i].Y, dsn.Points4[i].Z));
+                lines.Add(new Line(dsn.Points1[i].X, dsn.Points1[i].Y, dsn.Points1[i].Z, dsn.Points2[i].X, dsn.Points2[i].Y, dsn.Points2[i].Z));
+                lines.Add(new Line(dsn.Points3[i].X, dsn.Points3[i].Y, dsn.Points3[i].Z, dsn.Points4[i].X, dsn.Points4[i].Y, dsn.Points4[i].Z));
+            }
+            DA.SetDataList(1, lines);
         }
         /// <summary>
         /// You will need to override this Guid with an unique identifier for each class.

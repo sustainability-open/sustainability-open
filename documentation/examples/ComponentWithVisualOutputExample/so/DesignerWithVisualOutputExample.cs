@@ -33,11 +33,13 @@ namespace ComponentWithVisualOutputExample
     {
         public double Height = 1.0;
         public double Span = 10.0;
+        public int NumberOfFrames = 1;
+        public double Spacing = 1.0;
         public SOPoint3d basePoint = new SOPoint3d(0, 0, 0);
-        private SOPoint3d point1;
-        private SOPoint3d point2;
-        private SOPoint3d point3;
-        private SOPoint3d point4;
+        private List<SOPoint3d> points1 = new List<SOPoint3d>();
+        private List<SOPoint3d> points2 = new List<SOPoint3d>();
+        private List<SOPoint3d> points3 = new List<SOPoint3d>();
+        private List<SOPoint3d> points4 = new List<SOPoint3d>();
 
         /// <summary>
         /// Constructor
@@ -56,46 +58,54 @@ namespace ComponentWithVisualOutputExample
             // It is important that you run the base designer
             base.RunDesigner();
 
-            // Set up the points
-            point1 = basePoint;
-            point2 = new SOPoint3d(basePoint.X, basePoint.Y, basePoint.Z + Height);
-            point3 = new SOPoint3d(basePoint.X, basePoint.Y + Span, basePoint.Z);
-            point4 = new SOPoint3d(basePoint.X, basePoint.Y + Span, basePoint.Z + Height);
-
             // Adding a structure and two beams with the designer
             SOComponent structure = new SOComponent("structure");
             this.CurrentDesignAlternative.AddComponent(structure);
 
-            // Adding a beam layer to the structure
-            SOComponent beam = new SOComponent("beam_001");
-            structure.AddSubComponent(beam);
+            for (int i = 0; i < this.NumberOfFrames; i++)
+            {
+                // Set up the points
+                SOPoint3d point1 = new SOPoint3d(basePoint.X + ((double)i * Spacing), basePoint.Y, basePoint.Z);
+                SOPoint3d point2 = new SOPoint3d(basePoint.X + ((double)i * Spacing), basePoint.Y, basePoint.Z + Height);
+                SOPoint3d point3 = new SOPoint3d(basePoint.X + ((double)i * Spacing), basePoint.Y + Span, basePoint.Z);
+                SOPoint3d point4 = new SOPoint3d(basePoint.X + ((double)i * Spacing), basePoint.Y + Span, basePoint.Z + Height);
 
-            // Adding a beam to the beam layer
-            beam.AddPart(new Beam_HE400A(point2, point4));
+                // Adding a beam layer to the structure
+                SOComponent beam = new SOComponent("beams");
+                structure.AddSubComponent(beam);
 
-            // Adding a set of columns to the structure
-            SOComponent columns = new SOComponent("columns_001");
-            structure.AddSubComponent(columns);
+                // Adding a beam to the beam layer
+                beam.AddPart(new Beam_HE400A(point2, point4));
 
-            // Adding two columns to the column set
-            columns.AddPart(new Beam_HE320A(point1, point2));
-            columns.AddPart(new Beam_HE320A(point3, point4));
+                // Adding a set of columns to the structure
+                SOComponent columns = new SOComponent("columns");
+                structure.AddSubComponent(columns);
+
+                // Adding two columns to the column set
+                columns.AddPart(new Beam_HE320A(point1, point2));
+                columns.AddPart(new Beam_HE320A(point3, point4));
+
+                this.points1.Add(point1);
+                this.points2.Add(point2);
+                this.points3.Add(point3);
+                this.points4.Add(point4);
+            }
         }
-        public SOPoint3d Point1
+        public SOPoint3d[] Points1
         {
-            get { return this.point1; }
+            get { return this.points1.ToArray(); }
         }
-        public SOPoint3d Point2
+        public SOPoint3d[] Points2
         {
-            get { return this.point2; }
+            get { return this.points2.ToArray(); }
         }
-        public SOPoint3d Point3
+        public SOPoint3d[] Points3
         {
-            get { return this.point3; }
+            get { return this.points3.ToArray(); }
         }
-        public SOPoint3d Point4
+        public SOPoint3d[] Points4
         {
-            get { return this.point4; }
+            get { return this.points4.ToArray(); }
         }
     }
 }
