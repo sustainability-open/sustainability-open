@@ -3,7 +3,7 @@ sustainability-open
 
 Version 0.0.3
 -------------
-
+ * Added example with visual output
 
 Version 0.0.2
 -------------
